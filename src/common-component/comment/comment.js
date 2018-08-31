@@ -23,6 +23,12 @@ export default function Comment($el, commentData, isCommit, callback) {
 
                 $(".dynamicDetails-layout").addClass("hasCommentInput");
             }
+            $('.dynamicDetails-layout').off('click').on('click',function (e) {
+               if($(e.target).parents('.comment-input').length<=0 && $(e.target).data('handle')!=='handleComment'){
+                   $(".comment-input").slideUp(500);
+                   $(".dynamicDetails-layout").removeClass("hasCommentInput");
+               }
+            });
         },
         bindEvent: function() {
             let _this = this;
@@ -45,17 +51,17 @@ export default function Comment($el, commentData, isCommit, callback) {
                     event.preventDefault();
                 });
                 
-                _this.timeout = setTimeout(function() {
+                //_this.timeout = setTimeout(function() {
                     // e.target.scrollIntoView(false);
-                },200);
+                //},200);
             })
             .on('blur',function(e){
-                $container.off('touchmove').scrollTop(currentScrollTop);
-                $(".dynamicDetails-layout").removeClass("hasCommentInput");
-                $(this)
-                .val('')
-                .parent()
-                .hide();
+                // $container.off('touchmove').scrollTop(currentScrollTop);
+                // $(".dynamicDetails-layout").removeClass("hasCommentInput");
+                // $(this)
+                // .val('')
+                // .parent()
+                // .hide();
             })
             .on("keypress",function(e){
                 if(e.keyCode == 13){//回车提交
@@ -77,7 +83,7 @@ export default function Comment($el, commentData, isCommit, callback) {
             }
 
             $(".comment-input")
-                .show()
+                .slideDown(500)
                 .find(".input-box")
                 .attr('data-type','1')
                 .attr('data-user-id',$this.parents("li").data('userId'))

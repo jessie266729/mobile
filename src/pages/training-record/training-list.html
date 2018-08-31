@@ -19,20 +19,20 @@
             <p>{{item.Title}}</p>
             <div>
                 {{if item.Status == 20 &&  item.SoType===1}}
-                <p class="account-info">
+                <p class="account-info poo">
                     <span>账号：</span><input id="copyAccount{{i}}" value="{{item.AccountNo}}"/>
                     <span class="copy js-handle" data-copytarget="#copyAccount{{i}}" data-handle="copyText">复制</span>
                 </p>
-                <p class="account-info">
+                <p class="account-info poo">
                     <span>密码：</span><input id="copyPwd{{i}}" value="{{item.Pwd}}"/>
                     <span class="copy js-handle" data-copytarget="#copyPwd{{i}}" data-handle="copyText">复制</span>
                 </p>
                 {{else if  item.Status == 20 &&  item.SoType===2}}
-                <p class="account-info">
+                <p class="account-info poo">
                     <span>导师：</span><input id="copyTeacher{{i}}" value="{{item.TeacherName}}"/>
                     <span class="copy js-handle" data-copytarget="#copyTeacher{{i}}" data-handle="copyText">复制</span>
                 </p>
-                <p class="account-info">
+                <p class="account-info poo">
                     <span>QQ：</span><input id="copyQQ{{i}}" value="{{item.TeacherQQ}}"/>
                     <span class="copy js-handle" data-copytarget="#copyQQ{{i}}" data-handle="copyText">复制</span>
                 </p>

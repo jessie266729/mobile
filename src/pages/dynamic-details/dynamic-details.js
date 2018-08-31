@@ -19,7 +19,7 @@ export default function DynamicDetails(type,id) {
             this.bindEvent();
         },
         bindEvent: function() {
-            
+
         },
         renderDetails: function(isRefersh) {
             let _this = this;

@@ -8,7 +8,7 @@ export default function Header(imgList,index) {
         init: function() {
             $("body").append(PinchZoomTpl({imgList}));
             let swiper = new Swiper('#show_img_container', {
-                initialSlide :index,
+                initialSlide:index,
                 pagination: '.swiper-pagination',
                 paginationClickable :true,
                 paginationType : 'bullets'
