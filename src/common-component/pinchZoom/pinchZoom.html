@@ -1,0 +1,10 @@
+<div class="show-img-container" id="show_img_container">
+    <div class="swiper-wrapper">
+        {{each imgList imgItem i}}
+        <div class="swiper-slide">
+            <img class="w-full" src="{{imgItem}}" alt="">
+        </div>
+        {{/each}}
+    </div>
+    <div class="swiper-pagination"></div>
+</div>

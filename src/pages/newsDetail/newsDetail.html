@@ -1,0 +1,21 @@
+<div class="newsDetail-page">
+
+	<p>{{newsDetail.Title}}</p>
+
+	<div class="headerInfo">
+		<img src="{{newsDetail.UserUrl || require('../../asset/images/groupItem/headImage.png')}}" alt="">
+		<div>
+			<p>{{newsDetail.PublishNickName}}</p>
+			<span>{{newsDetail.InDate}}</span>
+		</div>
+	</div>
+
+	<div class="detail-con">
+		{{@newsDetail.Content}}
+	</div>
+
+	{{each newsDetail.ImageUrlList imgItem}}
+		<img src={{imgItem}} alt=""/>
+	{{/each}}
+
+</div>

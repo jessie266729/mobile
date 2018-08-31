@@ -1,0 +1,73 @@
+@import "../../asset/common";
+
+.footer{
+    position:relative;
+    width: 100%;
+    height:100%;
+    .nav-item{
+        width:20%;
+        padding-top:rem(21);
+        text-align:center;
+        &:nth-child(1){
+            &.active{
+                .icon{
+                    background-image: url('../../asset/images/icon_qz_active.png');
+                }
+            }
+            .icon{
+                background-image: url('../../asset/images/icon_qz.png');
+                background-size: auto 100%;
+            }
+        }
+        &:nth-child(2){
+            &.active{
+                .icon{
+                    background-image: url('../../asset/images/icon_yx_active.png');
+                }
+            }        
+            .icon{
+                background-image: url('../../asset/images/icon_yx.png');
+                background-size: auto 100%;
+            }
+        }
+        &:nth-child(3){
+            &.active{
+                .icon{
+                    background-image: url('../../asset/images/icon_bs_active.png');
+                }
+            }
+            .icon{
+                background-image: url('../../asset/images/icon_bs.png');
+                background-size: auto 100%;
+            }
+        }
+        &:nth-child(4){
+            &.active{
+                .icon{
+                    background-image: url('../../asset/images/icon_kc_active.png');
+                }
+            }
+            .icon{
+                background-image: url('../../asset/images/icon_kc.png');
+                background-size: auto 100%;
+            }
+        }
+        &:nth-child(5){
+            &.active{
+                .icon{
+                    background-image: url('../../asset/images/icon_w_active.png');
+                }
+            }
+            .icon{
+                background-image: url('../../asset/images/icon_w.png');
+                background-size: auto 100%;
+            }
+        }
+        .icon{
+            display:inline-block;
+            width:rem(52);
+            height:rem(76);
+            background-repeat: no-repeat;
+        }
+    }
+}

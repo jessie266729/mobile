@@ -1,0 +1,28 @@
+<div class="training-record-page">
+
+	<div class="select-options clearFix">
+		<div class="list game">
+			<div class="list-item active" data-game="NULL"><span>全部</span></div>
+			{{each gemes item}}
+				<div class="list-item" data-game="{{item.Id}}"><span>{{item.GameIName}}</span></div>
+			{{/each}}
+		</div>
+		<div class="list time">
+			<div class="list-item active" data-time="NULL"><span>全部</span></div>
+			<div class="list-item" data-time="1"><span>近3个月</span></div>
+			<div class="list-item" data-time="2"><span>3个月前</span></div>
+		</div>
+		<div class="list status">
+			<div class="list-item active" data-status="NULL"><span>全部</span></div>
+			<div class="list-item" data-status="0"><span>待支付</span></div>
+			<div class="list-item" data-status="10"><span>进行中</span></div>
+			<div class="list-item" data-status="20"><span>已完成</span></div>
+			<div class="list-item" data-status="-10"><span>已取消</span></div>
+		</div>
+	</div>
+
+	<div id="training-mescroll" class="mescroll record-list">
+		<ul id="training-ul"></ul>
+	</div>
+
+</div>

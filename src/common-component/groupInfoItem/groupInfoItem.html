@@ -1,0 +1,52 @@
+<div class="groupItem {{onlyOne ? 'only-one' : ''}}" data-id="{{Id}}">
+    <div class="headerInfo">
+        <a href="#/personal-details/{{UserId}}"><img src="{{UserUrl || require('../../asset/images/groupItem/headImage.png')}}" alt=""></a>
+        <div>
+            <!-- <p>{{NickName}}<img src="../../asset/images/groupItem/live.png" alt=""></p> -->
+            <p>{{NickName}}</p>
+            <span>{{InDate}}</span>
+        </div>
+        <!-- <img src="../../asset/images/groupItem/follow.png" alt=""> -->
+    </div>
+    <div class="content">
+        <p>{{Content}}</p>
+        <div>
+            {{each ImageUrlList item i}}
+            <div 
+                class="img-box js-handle" 
+                data-handle="handleShowImg" 
+                data-url="{{item}}"
+                data-index="{{i}}"
+                data-adata="{{ImageUrlList}}"
+                style="background:url({{item}}) no-repeat center center;background-size:cover;"></div>
+            {{/each}}
+            <div class="operator">
+                <span class="js-handle" data-handle="handleComment"></span>
+                <span class="js-handle {{IsClickLike ? 'hasLiked' : ''}}" data-handle="handleLike"></span>
+                <span class="js-handle" data-handle="handleMenu"></span>
+                <div class="operator_menu">
+                    <div class="js-handle" data-handle="handleReport">
+                        <img src="../../asset/images/groupItem/report.png" alt="">
+                        <span>举报</span>
+                    </div>
+                    <div>
+                        <img src="../../asset/images/groupItem/share.png" alt="">
+                        <span>分享</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="comments">
+
+        {{each CommentReplyList item i}}
+
+            <p><span>{{item.NickName}}：</span>{{item.CommentReplyType === 1 ? '@' + item.ReplyUserNickName + ' ' + item.Content : item.Content}}</p>
+
+        {{/each}}
+        <div class="showAll js-handle" data-handle="handleLink">
+            <span>查看全部 {{CommentCount}} 条评论</span>
+            <img src="../../asset/images/groupItem/showAll.png" alt="">
+        </div>
+    </div>
+</div>

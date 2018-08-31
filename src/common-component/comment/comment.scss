@@ -1,0 +1,163 @@
+@import "../../asset/common";
+
+.comment{
+    padding:0 rem(20);
+    background: #fff;
+    border-radius: rem(15);
+    border: 1px solid #e3e0db;
+    .comment-header{
+        position:relative;
+        height:rem(60);
+        line-height:rem(60);
+        text-align: right;
+        border-bottom:1px solid #d9d8d4;
+        .comment-num{
+            position:absolute;
+            top:0;
+            left:0;
+            width:rem(176);
+            height:rem(50);
+            background-color:#ffaf00;
+            border-bottom-left-radius: rem(15);
+            border-bottom-right-radius: rem(15);
+            text-align: center;
+            line-height: rem(50);
+            font-size:rem(24);
+            color:#fff;
+            z-index: 10;
+        }
+        .like-num{
+            display: inline-block;
+            font-size:rem(24);
+            color:#050100;
+            span{
+                vertical-align:middle;
+            }
+            .icon-heart{
+                display: inline-block;
+                width:rem(29);
+                height:rem(27);
+                background:url('../../asset/images/icon_heart.png') 0 0 no-repeat;
+                background-size:100% 100%;
+            }
+        }
+    }
+    .comment-info-list{
+        li{
+            &:first-child{
+                padding-top:rem(16);
+            }
+            &:last-child{
+                .info-modal{
+                    border-bottom:none;
+                }
+            }
+            & + li{
+                margin-top:rem(25);
+            }
+            .photo{
+                width:rem(108);
+                height:100%;                                
+                img{
+                    display: block;
+                    width:rem(82);
+                    height:rem(82);
+                    @include border-radius(rem(82));
+                }
+            }
+            .info-modal{
+                position:relative;
+                padding-bottom:rem(25);
+                border-bottom:1px solid #d9d8d4;
+                overflow: hidden;
+                .name{
+                    font-size:rem(24);
+                    color:#050100;
+                }
+                .time{
+                    height:rem(42);
+                    line-height: rem(42);
+                    font-size:rem(20);
+                    color:#b2b1ad;
+                }
+                .content{
+                    font-size:rem(24);
+                    color:#050100;
+                    padding-right: rem(90)
+                }
+                .operator{
+                    position:absolute;
+                    bottom:rem(25);
+                    right:0;
+                    span{
+                        display: inline-block;
+                        vertical-align: middle;
+                        background-size: rem(46) rem(39);
+                        width: rem(46);
+                        height: rem(39);
+                        &.icon-comment{
+                            margin-right:rem(24);
+                            background:url('../../asset/images/groupItem/comment.png') 0 0 no-repeat;
+                            background-size:100% 100%;
+                        }
+                        &.icon-like{
+                            margin-right:rem(24);
+                            background:url('../../asset/images/groupItem/like.png') 0 0 no-repeat;
+                            background-size:100% 100%;                            
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .comment-input{
+        display: none;
+        position: fixed;
+        bottom:0;
+        left:0;
+        width:100%;
+        height:rem(72);
+        padding:rem(8) rem(142) rem(8) rem(24);
+        @include box-shadow-outset(2px,2px,4px,4px,#d9d8d4);
+        background-color:rgba(225,225,225,.7);
+        @include box-sizing();
+        z-index:1000;
+        .input-box{
+            width:100%;
+            height:rem(56);
+            line-height: rem(40);
+            padding:rem(8) 0 rem(8) rem(24);
+            @include border-radius(rem(15));
+            background-color:#cec9c3;
+            font-size:rem(30);  
+            color:#625b51;   
+            // -webkit-user-select:text; 
+            border:none;                  
+            @include box-sizing();
+            & > img{
+                position:relative;
+                top:rem(-2);
+                width:rem(38);
+                height:rem(38);
+                padding:0 rem(4);
+                overflow: hidden;
+            }
+        }
+        .send-btn{
+            position:absolute;
+            top:0;
+            right:0;
+            width:rem(142);
+            height:rem(72);
+            text-align: center;
+            .icon-expression{
+                display: inline-block;
+                margin-top:rem(13);
+                width:rem(45);
+                height:rem(45);
+                background:url('../../asset/images/icon_face.png') 0 0 no-repeat;
+                background-size:100% 100%;
+            }
+        }
+    }
+}

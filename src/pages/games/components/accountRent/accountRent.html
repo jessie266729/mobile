@@ -1,0 +1,30 @@
+<div id="header-all">
+    <div id="headerMenu">
+        <div class="hot-recommend clearFix">
+            <div class="hot-title">
+                <span>热门推荐:</span>
+            </div>
+            <div class="hot-list">
+                {{each gameInfoList item i}}
+                <div class="hot-list-item" data-id={{item.Id}}><span>{{item.GameIName}}</span></div>
+                {{/each}}
+            </div>
+        </div>
+        <div class="sort clearFix">
+            <div class="sort-border active" data-type="0">综合排序</div>
+            <div class="sort-border" data-type="1">价格最低</div>
+            <div class="sort-border" data-type="2">出租最多</div>
+            <!--<div class="account-safe-btn">-->
+                <!--<img src="../../../../asset/images/games/safe_account.png">-->
+                <!--<span>账号安全有保障</span>-->
+            <!--</div>-->
+            <!--<div class="auto-transport-btn">-->
+                <!--<img src="../../../../asset/images/games/auto_transport.png">-->
+                <!--<span>自动发货</span>-->
+            <!--</div>-->
+        </div>
+    </div>
+    <div id="acc-mescroll" class="mescroll container-list">
+        <ul class="acc-ul" id="acc-list"></ul>
+    </div>
+</div>

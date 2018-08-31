@@ -1,0 +1,64 @@
+@import "../../asset/common";
+
+.forgetPwd-page{
+  position:fixed;
+  top:0;
+  left:0;
+  right:0;
+  bottom:0;
+  background-color:#f1ede8;
+  overflow-x:hidden;
+  overflow-y: scroll;
+  z-index:1002;
+
+  >.head-logo{
+    width: 100%;
+    height: rem(280);
+    background: #252525;
+    padding-top: rem(60);
+    box-sizing: border-box;
+    img{
+      width: rem(275);
+      margin: 0 auto;
+      display: block;
+    }
+  }
+  
+  >p.head-title{
+    font-size: rem(36);
+    color: #252525;
+    text-align: center;
+    padding-top: rem(20);
+  }
+
+  >.forgetPwd-body {
+    width: rem(520);
+    margin: rem(60) auto rem(200);
+    p {
+      margin-bottom: rem(60);
+      position: relative;
+      input {
+        text-align: center;
+      }
+      .forgetPwd-phone {
+        text-align: left;
+        padding-right: rem(200);
+        & + span {
+          display: inline-block;
+          width: rem(190);
+          height: rem(65);
+          line-height: rem(65);
+          font-size: rem(30);
+          background: #ffaf00;
+          color: #ffffff;
+          text-align: center;
+          position: absolute;
+          right: 0;
+          top: 0;
+          border-top-right-radius: rem(65);
+          border-bottom-right-radius: rem(65);
+        }
+      }
+    }
+  }
+}

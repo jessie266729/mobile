@@ -1,0 +1,114 @@
+@import "../../asset/common";
+
+$themeBlack: #141414;
+$hotColor: #585757;
+$themeYellow: #ffaf00;
+
+.all-matches-page{
+    height: 100%;
+    .select-recommend{
+        background: $themeBlack;
+        padding-top: rem(16);
+        .select-title{
+          float: left;
+          margin: 0 rem(18) 0 rem(25);
+          color: $hotColor;
+          font-size: rem(30);
+          height: rem(100);
+          line-height: rem(50);
+          text-align: center;
+        }
+        .select-list{
+            font-size: rem(30);
+            color: $hotColor;
+            .select-list-item{
+                display: inline-block;
+                width: rem(120);
+                height: rem(50);
+                line-height: rem(50);
+                text-align: center;
+                margin-bottom: rem(4);
+                color: $hotColor;
+                font-size: rem(24);
+                border: 1px solid $themeBlack;
+                &.active{
+                color: $themeYellow;
+                border: 1px solid $themeYellow;
+                border-radius: rem(15);
+                }
+            }
+        }
+    }
+    .select-recommend:nth-child(2){
+        margin-top: -1px;
+        .select-title{
+            height: rem(70);
+        }
+    } 
+
+    .matches-list{
+        box-sizing: border-box;
+
+        .matches-ul{
+            padding: rem(15) rem(10) 1px;
+        }
+
+        .matches-item{
+            background: #fff;
+            border: 1px solid #e3e0db;
+            border-radius: rem(10);
+            padding: rem(17) rem(20) rem(17) rem(15);
+            margin-bottom: rem(15);
+
+            >img{
+                width: rem(245);
+                height: rem(160);
+                float: left;
+            }
+
+            >div.matches-info{
+                height: rem(160);
+                padding-left: rem(275);
+                position: relative;
+                >p{
+                    font-size: rem(30);
+                    color: #050100;
+                    margin-bottom: rem(20);
+                    @include ellipsis1();
+                }
+                >span{
+                    font-size: rem(24);
+                    color: #625b51;
+                }
+                >div{
+                    font-size: rem(26);
+                    color: #ffffff;
+                    line-height: rem(55);
+                    text-align: center;
+                    position: absolute;
+                    right: 0;
+                    bottom: 0;
+            
+                    span{
+                      display: inline-block;
+                      padding: 0 rem(20);
+                      border-radius: rem(25);
+                    }
+            
+                    span:first-child{
+                      background: #ffaf00;
+                      margin-right: rem(20);
+                    }
+            
+                    span:last-child{
+                      background: #fd8515;
+                    }
+            
+                  }
+            }
+
+        }
+
+    }
+
+}

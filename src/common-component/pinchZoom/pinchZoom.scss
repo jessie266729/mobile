@@ -1,0 +1,19 @@
+@import "../../asset/common";
+
+.show-img-container{
+    position: absolute;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    background-color:rgba(0,0,0,.5);
+    overflow: hidden;
+    z-index: 10000;
+    touch-action: none;
+    .swiper-wrapper{
+        margin-top: 50%;
+    }
+    .pinch-zoom{
+        position: relative;
+    }
+}

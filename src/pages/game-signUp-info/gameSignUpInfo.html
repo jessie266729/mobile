@@ -1,0 +1,42 @@
+<div class="game-sign-up-info">
+	<ul class="info-list">
+		<li class="clearFix">
+			<span class="info-title fl">比赛名称</span>
+			<span class="info-con"><i class="fr">{{CompetitionName}}</i></span>
+		</li>
+		<li class="clearFix">
+			<span class="info-title fl">游戏类别</span>
+			<span class="info-con"><i class="fr">{{GameCategory}}</i></span>
+		</li>
+		<li class="clearFix">
+			<span class="info-title fl">比赛地图</span>
+			<span class="info-con"><i class="fr">{{GameMap}}</i></span>
+		</li>
+		<li class="clearFix">
+			<span class="info-title fl">赛事规则</span>
+			<span class="info-con"><i class="fr">{{Rule}}</i></span>
+		</li>
+		<li class="clearFix">
+			<span class="info-title fl">报名时间</span>
+			<span class="info-con"><i class="fr">{{ApplyStartTime.split(' ')[0] +' 至 '+ ApplyEndTime.split(' ')[0]}}</i></span>
+		</li>
+		<li class="clearFix">
+			<span class="info-title fl">比赛时间</span>
+			<span class="info-con"><i class="fr">{{GameStartTime.split(' ')[0] +' 至 '+ GameEndTime.split(' ')[0]}}</i></span>
+		</li>
+		<li class="clearFix">
+			<span class="info-title fl">比赛介绍</span>
+			<span class="info-con"><i class="fr">{{Introduce}}</i></span>
+		</li>										
+	</ul>
+
+	<div class="btn-module">
+		{{if CompetitionStatus == 10}}
+		<button class="btn js-handle" data-handle="handleSignUp" data-status="{{CompetitionStatus}}">我要报名</button>
+		{{else if CompetitionStatus == 0}}
+		<button disabled class="btn js-handle" data-handle="handleSignUp" data-status="{{CompetitionStatus}}">报名未开始</button>
+		{{else if CompetitionStatus > 10}}
+		<button disabled class="btn js-handle" data-handle="handleSignUp" data-status="{{CompetitionStatus}}">报名已结束</button>
+		{{/if}}
+	</div>
+</div>

@@ -1,0 +1,74 @@
+@import "../../../../asset/common";
+
+.interaction-page{
+
+    >div:first-child{
+        .createBtn{
+            text-align: center;
+            padding: rem(115) 0 rem(120);
+            font-size: rem(30);
+            color: #050100;
+            line-height: rem(60);
+            background: #fff;
+    
+            img{
+                width: rem(215);
+                height: rem(215);
+            }
+    
+        }
+
+        .information{
+            font-size: rem(30);
+            color: #625b51;
+            text-align: center;
+            line-height: rem(50);
+            background: #fff;
+            position: relative;
+        }
+        >img{
+            width: 100%;
+            display: block;
+            margin-top: rem(-40);
+        }
+    }
+
+    >div:last-child{
+        font-size: rem(30);
+        margin: rem(120) auto 0;
+        text-align: center;
+
+        >span{
+            color: #625b51;
+            background: #cec9c3;
+            width: rem(175);
+            height: rem(65);
+            line-height: rem(65);
+            display: inline-block;
+        }
+
+        >span.active{
+            background: #ffaf00;
+            color: #fff;
+        }
+
+        >span:first-child{
+            border-top-left-radius: rem(65);
+            border-bottom-left-radius: rem(65);
+            border-right: 1px solid #9a9690;
+        }
+
+        >span:nth-child(2){
+            border-left: 1px solid #f1ede8;
+            border-right: 1px solid #9a9690;
+        }
+
+        >span:last-child{
+            border-top-right-radius: rem(65);
+            border-bottom-right-radius: rem(65);
+            border-left: 1px solid #f1ede8;
+        }
+
+    }
+    
+}

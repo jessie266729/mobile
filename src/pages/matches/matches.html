@@ -1,0 +1,73 @@
+<div class="matches-page">
+
+    <div class="video-list">
+        
+        <div class="swiper-wrapper">
+
+            {{each videoList item i}}
+                <div class="swiper-slide">
+                    <img src="{{item.DefaultImageUrl}}" alt=""/>
+                    <!-- <img src="http://xiyuxing.oss-cn-qingdao.aliyuncs.com/3c6f3cb1-968a-40e5-b2bb-6dc611d2c9bb.png" alt=""/> -->
+                    <video
+                    id="video-{{i}}"
+                    class="video-js vjs-default-skin vjs-fluid  vjs-big-play-centered"
+                    controls 
+                    preload="none" 
+                    playsinline
+                    poster="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQImWNgYGBgAAAABQABh6FO1AAAAABJRU5ErkJggg=="
+                    style="background: transparent url({{item.DefaultImageUrl}}) no-repeat center center;background-size:cover;">
+                        <source src="{{item.AdRelativeUrl}}" type="video/mp4"></source>
+                    </video>
+                </div>
+
+            {{/each}}
+
+        </div>
+
+        <div class="swiper-pagination"></div>
+
+    </div>
+
+    <div class="recent-event clearFix">
+
+        <div class="header-common clearFix">
+            <div class="fl">近期赛事活动</div>
+            <div class="fr js-handle" data-handle="toAllMatches"><img src="../../asset/images/groupItem/menu.png" alt=""/></div>
+        </div>
+
+        {{each compList item i}}
+
+            <div class="event-item {{i==1 ? 'fr' : 'fl'}}" data-id={{item.Id}}>
+                <img src={{item.DefaultImageUrl}} alt="" class="js-handle" data-handle="toMatchDetails"/>
+                <div>
+                    <span class="js-handle" data-handle="toMatchDetails">赛事详情</span>
+                    <span class="js-handle" data-handle="toSignUpInfo">比赛报名</span>
+                </div>
+            </div>
+
+        {{/each}}
+
+    </div>
+
+    <div class="hot-news">
+        <div class="header-common clearFix">
+            <div class="fl">热点新闻</div>
+            <div class="fr"><a href="#/news"><img src="../../asset/images/groupItem/menu.png" alt=""/></a></div>
+        </div>
+        <div class="news-list">
+
+            {{each newsList item i}}
+
+                <a href="#/newsDetail/{{item.Id}}">
+                    <div class="news-item">
+                        <span>{{item.Title}}</span>
+                        <span>{{item.InDate.substring(5,10)}}</span>
+                    </div>
+                </a>
+
+            {{/each}}
+
+        </div>
+    </div>
+
+</div>

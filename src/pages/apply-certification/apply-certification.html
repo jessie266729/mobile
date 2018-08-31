@@ -1,0 +1,41 @@
+<div class="apply-certification">
+    <div class="status-module clearFix">
+        <span class="status-item left fl active">申请认证</span>
+        <span class="icon-right left fl"></span>
+        <span class="status-item center">审核中</span>
+        <span class="status-item right fr">已认证</span>
+        <span class="icon-right right fr"></span>
+    </div>
+    <div class="certf-info">
+        <p class="hint">输入本人身份信息（提交后不可更改）</p>
+        <div class="info-item clearFix">
+            <span class="info-title fl">姓名</span>
+            <div class="input-module">
+                <input name="Name" type="text">
+            </div>
+        </div>
+        <div class="info-item clearFix">
+            <span class="info-title fl">学号</span>
+            <div class="input-module">
+                <input name="StudentNumber" type="text">
+            </div>
+        </div>
+        <div class="info-item clearFix">
+            <span class="info-title fl">学校名称</span>
+            <div class="select-module clearFix">
+                <div class="select-info js-handle" data-handle="handleSelect">
+                    <span class="select-value">请选择</span>
+                    <span class="icon-down fr"><i></i></span>
+                </div> 
+                <select name="SchoolId">
+                    {{each schoolList item i}}
+                        <option value="{{item.Id}}">{{item.Name}}</option>
+                    {{/each}}
+                </select>
+            </div> 
+        </div>
+    </div>
+    <div class="btn-module">
+        <button class="btn js-handle" data-handle="handleSubmit">确认提交</button>
+    </div>
+</div>

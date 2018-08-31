@@ -1,0 +1,211 @@
+@import "../../asset/common";
+
+$themeBlack: #141414;
+$themeGray: #252525;
+$hotColor: #585757;
+$themeYellow: #ffaf00;
+$defaultBorder: 1px solid #cec9c3;
+$activeBorder: 1px solid #ef9000;
+.games{
+  .game-header{
+    overflow: hidden;
+    height: rem(60);
+    padding: rem(3) rem(30) 0 rem(30);
+    background: $themeGray;
+    .game-header-item{
+      float: left;
+      position: relative;
+      width: 25%;
+      line-height: rem(61);
+      font-size: rem(30);
+      text-align: center;
+      color: #93908b;
+      border-top-left-radius: rem(1);
+      border-top-right-radius: rem(1);
+      &.active{
+        color: $themeYellow;
+        background: $themeBlack;
+        .header-top{
+          position: absolute;
+          left: 0;
+          top: 0;
+          width: 100%;
+          height: rem(6);
+          background: $themeYellow;
+        }
+      }
+    }
+  }
+  .item-container{
+
+  }
+  #header-all{
+
+    .hot-recommend{
+      background: $themeBlack;
+      padding: rem(16) 0 rem(5);
+      .hot-title{
+        float: left;
+        margin: 0 rem(18) 0 rem(25);
+        color: $hotColor;
+        font-size: rem(30);
+        height: rem(50);
+        line-height: rem(50);
+        text-align: center;
+      }
+      .hot-list{
+        font-size: rem(30);
+        color: $hotColor;
+        overflow: hidden;
+        .hot-list-item{
+          display: inline-block;
+          width: rem(120);
+          height: rem(50);
+          line-height: rem(50);
+          text-align: center;
+          margin-bottom: rem(4);
+          color: $hotColor;
+          font-size: rem(24);
+          border: 1px solid $themeBlack;
+          &.active{
+            color: $themeYellow;
+            border: 1px solid $themeYellow;
+            border-radius: rem(15);
+          }
+        }
+      }
+    }
+    .sort{
+      font-size: rem(24);
+      padding: rem(15) rem(18) 0;
+      img{
+        float: left;
+        width: rem(42);
+      }
+      span{
+        padding: 0 rem(3);
+        line-height: rem(54);
+      }
+      >div{
+        float: left;
+        border-radius: rem(15);
+        height: rem(50);
+        line-height: rem(48);
+      }
+      .sort-border{
+        color: #93908b;
+        text-align: center;
+        border: $defaultBorder;
+        background: #cec9c3;
+        padding: 0 rem(10);
+        &.active{
+          color: #fff;
+          border: $activeBorder;
+          background: $themeYellow;
+        }
+      }
+      .account-safe-btn{
+        padding-right:rem(5);
+        font-size: rem(20);
+        color: #259cf6;
+        border: $defaultBorder;
+        background: #fff;
+        span{
+            position:relative;
+            top:rem(-2);
+        }
+      }
+      .auto-transport-btn{
+        padding-right:rem(5);
+        font-size: rem(20);
+        color: #252525;
+        border: $defaultBorder;
+        background: #fff;
+        span{
+            position:relative;
+            top:rem(-2);
+        }
+      }
+  
+      & > div + div{
+        margin-left: rem(15);
+      }
+  
+    }
+    .container-list{
+      .acc-ul, .online-ul{
+        padding:rem(15) 0;
+        box-sizing: border-box;
+      }
+      .components-item{
+        &+.components-item{
+          margin-top: rem(12);
+        }
+        position: relative;
+        margin: 0 auto;
+        width: 98%;
+        height: rem(192);
+        border: $defaultBorder;
+        border-radius: rem(15);
+        background: #fff;
+        .item-container{
+          width: 98%;
+          position: absolute;
+          top: 50%;
+          transform: translateY(-50%);
+          padding-left: rem(16);
+          >div{
+            display: inline-block;
+            vertical-align: middle;
+          }
+          .images-type{
+            display: inline-block;
+            vertical-align: middle;
+            width: rem(250);
+            height: rem(160);
+          }
+          .prod-detail{
+            width: rem(430);
+            height: rem(160);
+            padding-left: rem(5);
+            .detail-name{
+              font-size: rem(30);
+              color: #050100;
+              padding: rem(8) 0;
+              @include ellipsis1();
+            }
+            .detail-advantage{
+              height:rem(30);
+              line-height: rem(30);
+              font-size: rem(24);
+              color: #625b51;
+              padding: rem(8) 0;
+              @include ellipsis1();
+            }
+            .detail-price{
+              font-size: rem(36);
+              color: $themeYellow;
+              padding: rem(8) 0;
+            }
+          }
+          .now-use{
+            float: right;
+            .now-use-btn{
+              position: absolute;
+              bottom: rem(3);
+              right: rem(30);
+              text-align: center;
+              width: rem(160);
+              height: rem(55);
+              line-height: rem(55);
+              font-size: rem(30);
+              color: #fff;
+              background: $themeYellow;
+              border-radius: rem(30);
+            }
+          }
+        }
+      }
+    }
+  }  
+}

@@ -1,0 +1,17 @@
+{{each seachPlayList item i}}
+    <div class="components-item js-handle" data-id="{{item.Id}}" data-handle="toAccountRental">
+        <div class="item-container">
+            <img class="images-type radius" src="{{item.DefaultImageUrl}}" alt="">
+            <div class="prod-detail">
+                <div class="detail-name">{{item.Title}}</div>
+                <div class="detail-advantage">{{item.Remark}}</div>
+                <div class="detail-price">
+                    ￥<sapn>{{item.UnitPrice}}</sapn>
+                </div>
+            </div>
+            <div class="now-use">
+                <div class="now-use-btn js-handle" data-id="{{item.Id}}" data-handle="placeOrder">立即使用</div>
+            </div>
+        </div>
+    </div>
+{{/each}}

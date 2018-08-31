@@ -1,0 +1,140 @@
+@import "../../asset/common";
+
+.apply-certification{
+    min-height:100%;
+    padding:rem(60) rem(30);
+    background-color:#f1ede8;
+    @include box-sizing();
+    .status-module{
+        position: relative;
+        padding:0 rem(30) rem(42);
+        border-bottom:1px solid #d9d8d4;
+        .status-item{
+            width:rem(144);
+            height:rem(144);
+            border-radius:rem(144);
+            background-color:#cec9c3;
+            font-size:rem(36);
+            color:#fff;
+            @include box-sizing();
+            &.active{
+                background-color:#ffaf00;
+            }
+            &.left{
+                padding:rem(25) rem(36) 0;
+            }
+            &.center{
+                position: absolute;
+                top:0;
+                left:50%;
+                margin-left:rem(-72);
+                text-align: center;
+                line-height: rem(144);
+            }
+            &.right{
+                text-align: center;
+                line-height: rem(144);
+            }
+        }
+        .icon-right{
+            width:rem(54);
+            height:rem(42);
+            margin-top:rem(51);
+            background:url("../../asset/images/applyCertf/icon_status.png") 0 0 no-repeat;
+            background-size:100% 100%;
+            &.active{
+                background:url("../../asset/images/applyCertf/icon_status_active.png") 0 0 no-repeat;
+                background-size:100% 100%;
+            }
+            &.left{
+                margin-left:rem(20);
+            }
+            &.right{
+                margin-right:rem(24);
+            }
+        }
+    }
+    .certf-info{
+        margin-top:rem(80);
+        .hint{
+            margin-bottom:rem(85);
+            text-align: center;
+            font-size:rem(24);
+            color:#625b51;
+        }
+        .info-item{
+            padding:0 rem(50);
+            & + .info-item{
+                margin-top:rem(64);
+            }
+            .info-title{
+                width:rem(136);
+                height:rem(58);
+                line-height: rem(56);
+                font-size:rem(30);
+                color:#050100;
+            }
+            .input-module{
+                overflow: hidden;
+                input{
+                    width:100%;
+                    border-color:#cec9c3;
+                    border-radius:rem(10);
+                }
+            }
+            .select-module{
+                position: relative;
+                overflow: hidden;
+                height:rem(58);
+                border:1px solid #cec9c3;
+                border-radius:rem(10);
+                @include box-sizing();
+                .select-info{
+                    position:relative;
+                    height:100%;
+                    pointer-events: none;
+                    background-color:#eeedeb;
+                    z-index:1;
+                }
+                .select-value{
+                    padding-left:rem(15);
+                    line-height:rem(56);
+                    font-size:rem(28);
+                    color:#625b51;
+                }
+                .icon-down{
+                    position: relative;
+                    width:rem(100);
+                    height:rem(56);
+                    border-left:1px solid #cec9c3;
+                    i{
+                        position: absolute;
+                        top:50%;
+                        left:50%;
+                        width:rem(38);
+                        height:rem(20);
+                        margin:rem(-10) 0 0 rem(-19);
+                        background:url("../../asset/images/icon_bottom.png") 0 0 no-repeat;
+                        background-size:100% 100%;
+                    }
+                }
+                select{
+                    position: absolute;
+                    top:0;
+                    left:0;
+                    width:100%;
+                    height:100%;
+                    border:none;
+                    z-index:0;
+                }
+            }
+        }
+    }
+    .btn-module{
+        margin-top:rem(220);
+        text-align: center;
+        .btn{
+            width:rem(528);
+        }
+    }
+}

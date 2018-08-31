@@ -1,0 +1,32 @@
+<div class="inviting-to-play-page">
+    
+    <img src="{{detailData.DetailImageUrl}}" alt="">
+
+    <div>
+        <p class="name">{{detailData.Title}}</p>
+        <div class="infos">游戏名称：{{detailData.GameIName}}</div>
+        <div class="price">￥ {{detailData.UnitPrice}} / 局</div>
+        <div class="otherInfo">陪玩</div>
+        <div class="operator js-handle" data-handle="toCreateOrder">邀请陪玩</div>
+    </div>
+
+    <div class="detail-info">
+
+        <!-- <div class="player-info infoItem-common">
+            <div class="title-common">玩家资料</div>
+            <div class="content-common">
+                <span>姓名: {{detailData.TeacherName}}</span><span>性别: {{detailData.sex === 1 ? '男' : '女'}}</span>
+                <span>等级: {{detailData.Grade === '1' ? '新玩家' : detailData.Grade === '2' ? '中级' : '高级'}}</span><span>状态: {{detailData.Status === 10 ? '上线/空闲' : detailData.Status === 15 ? '陪玩中' : '下线'}}</span>
+            </div>
+        </div> -->
+
+        <div class="player-intro infoItem-common">
+            <div class="title-common">详细信息</div>
+            <div class="content-common">
+                {{@detailData.Content}}
+            </div>
+        </div>
+
+    </div>
+
+</div>

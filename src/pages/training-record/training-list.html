@@ -1,0 +1,52 @@
+{{each trainingList item i}}
+    <div class="record-item js-handle" data-id="{{item.Id}}" data-handle="linkToDetail">
+        <div class="record-orderNo">
+            <span>订单号：<i>{{item.Id}}</i></span>
+            <span>下单时间：<i>{{item.InDate}}</i></span>
+        </div>
+        <div class="record-status">
+            <span>{{item.SoType == 1 ? '账号租用' : '陪玩'}}</span>
+            {{if item.Status == 10}}
+                <span class="status underway">进行中</span>
+            {{else if item.Status == 20}}
+                <span class="status">已完成</span>
+            {{else if item.Status == -10}}
+                <span class="status hasCancel">已取消</span>
+            {{/if}}
+        </div>
+        <div class="record-info">
+            <img src="{{item.DefaultImageUrl}}" alt="">
+            <p>{{item.Title}}</p>
+            <div>
+                {{if item.Status == 20 &&  item.SoType===1}}
+                <p class="account-info">
+                    <span>账号：</span><input id="copyAccount{{i}}" value="{{item.AccountNo}}"/>
+                    <span class="copy js-handle" data-copytarget="#copyAccount{{i}}" data-handle="copyText">复制</span>
+                </p>
+                <p class="account-info">
+                    <span>密码：</span><input id="copyPwd{{i}}" value="{{item.Pwd}}"/>
+                    <span class="copy js-handle" data-copytarget="#copyPwd{{i}}" data-handle="copyText">复制</span>
+                </p>
+                {{else if  item.Status == 20 &&  item.SoType===2}}
+                <p class="account-info">
+                    <span>导师：</span><input id="copyTeacher{{i}}" value="{{item.TeacherName}}"/>
+                    <span class="copy js-handle" data-copytarget="#copyTeacher{{i}}" data-handle="copyText">复制</span>
+                </p>
+                <p class="account-info">
+                    <span>QQ：</span><input id="copyQQ{{i}}" value="{{item.TeacherQQ}}"/>
+                    <span class="copy js-handle" data-copytarget="#copyQQ{{i}}" data-handle="copyText">复制</span>
+                </p>
+                {{/if}}
+            </div>
+            {{if item.Status == 10}}
+                <div class="record-operator">
+                    <div class="contactWay">
+                        <div>联系导师</div>
+                        <img src="../../asset/images/games/qq.png" alt="">
+                    </div>
+                    <div class="cancel">取消订单</div>
+                </div>
+            {{/if}}
+        </div>
+    </div>
+{{/each}}

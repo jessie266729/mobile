@@ -1,0 +1,233 @@
+@import "../../asset/common";
+
+.matches-page{
+  width: 100%;
+  padding-bottom:.2rem;
+  .video-list{
+    width: 100%;
+    height: 100%;
+    position: relative;
+
+    .swiper-slide{
+
+      img{
+        width: 100%;
+        opacity: 0;
+      }
+
+    }
+
+    .swiper-pagination{
+
+      >*{
+        transition: all 0s;
+        -moz-transition: all 0s;
+        -webkit-transition: all 0s;
+        -o-transition: all 0s;
+      }
+
+      &.swiper-pagination-bullets{
+        bottom: 0;
+        height: rem(30);
+        padding-top: rem(3);
+        background: url('../../asset/images/matches/border.png');
+      }
+
+      .swiper-pagination-bullet{
+        background: #ffffff;
+        background-size: rem(29);
+        width: rem(29);
+        height: rem(29);
+        vertical-align: middle;
+      }
+
+      .swiper-pagination-bullet.swiper-pagination-bullet-active{
+        background-size: rem(29);
+        width: rem(29);
+        height: rem(29);
+        vertical-align: middle;
+      }
+
+    }
+
+    .video-js{
+        font-size:rem(10)!important;
+    }
+
+    .video-js.vjs-fluid{
+        position: absolute;
+        top:0;
+        left:0;
+        width:100%;
+        height:100%;
+        z-index: 10;
+    }
+    .vjs-poster{
+        background:transparent;
+    }
+
+    .vjs-paused .vjs-big-play-button,
+    .vjs-paused.vjs-has-started .vjs-big-play-button {
+        display: block;
+    }
+    .video-js .vjs-big-play-button{
+        font-size: 3em;
+        line-height: 2.8em;
+        height: 3em;
+        width: 3em;
+        -webkit-border-radius: 3em;
+        -moz-border-radius: 3em;
+        border-radius: 3em;
+        background-color: #73859f;
+        background-color: rgba(115,133,159,.5);
+        border-width: 0.15em;
+        margin-top: -1.5em;
+        margin-left: -1.8em;
+    }
+    /* 中间的播放箭头 */
+    .video-js .vjs-big-play-button .vjs-icon-placeholder {
+        font-size: 1.7em;
+    }
+    
+    .video-js.vjs-has-started .vjs-control-bar,.video-js.vjs-has-started .vjs-loading-spinner{
+        font-size:rem(28);
+    }
+
+    .video-js.vjs-fullscreen .vjs-big-play-button{
+        font-size: 2.5em;
+        line-height: 2.3em;
+        height: 2.5em;
+        width: 2.5em;
+        -webkit-border-radius: 2.5em;
+        -moz-border-radius: 2.5em;
+        border-radius: 2.5em;
+        background-color: #73859f;
+        background-color: rgba(115,133,159,.5);
+        border-width: 0.1em;
+        margin-top: -1.25em;
+        margin-left: -1.55em;
+    }
+    .video-js.vjs-fullscreen .vjs-big-play-button .vjs-icon-placeholder {
+        font-size: 1.6em;
+    }
+    .video-js.vjs-fullscreen  .vjs-control-bar,.video-js.vjs-fullscreen  .vjs-loading-spinner{
+        font-size:rem(26);
+    }
+
+  }
+
+  .recent-event{
+    background: #ffffff;
+    border: 1px solid #e3e0db;
+    border-radius: rem(15);
+    margin: rem(10) rem(10) 0;
+
+    .event-item{
+
+      >img{
+        width: rem(335);
+        height: rem(300);
+      }
+
+      >div{
+        font-size: rem(24);
+        color: #ffffff;
+        line-height: rem(54);
+        text-align: center;
+        padding: rem(23) 0 rem(12);
+
+        span{
+          display: inline-block;
+          padding: 0 rem(20);
+          border-radius: rem(25);
+        }
+
+        span:first-child{
+          background: #ffaf00;
+          margin-right: rem(20);
+        }
+
+        span:last-child{
+          background: #fd8515;
+        }
+
+      }
+
+    }
+
+  }
+
+  .hot-news{
+    background: #ffffff;
+    border: 1px solid #e3e0db;
+    border-radius: rem(15);
+    margin: rem(10) rem(10);
+    padding-bottom: rem(10);
+
+    .news-list{
+      padding: 0 rem(35);
+      font-size: rem(24);
+      color: #625b51;
+    }
+    
+    .news-item{
+      border-top: 1px solid #d9d8d4;
+      height: rem(63);
+      line-height: rem(63);
+      font-size: 0.32rem;
+      color: #625b51;
+
+      span{
+        display: inline-block;
+      }
+
+      span:first-child{
+        width: rem(550);
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+      }
+
+      span:last-child{
+        float: right;
+      }
+
+    }
+
+    a:last-child .news-item{
+      border-bottom: 1px solid #d9d8d4;
+    }
+
+  }
+
+  //����ͷ��
+  .header-common{
+    height: rem(80);
+    line-height: rem(80);
+
+    >div:first-child{
+      font-size: rem(30);
+      color: #050100;
+
+      &:before{
+        content: '';
+        display: inline-block;
+        width: rem(15);
+        height: rem(40);
+        background: #ffaf00;
+        margin-right: rem(10);
+        vertical-align: sub;
+        position: relative;
+        top: rem(3);
+      }
+
+    }
+
+    img{
+      height: rem(32);
+      margin-right: rem(15);
+    }
+
+  }
+    
+}

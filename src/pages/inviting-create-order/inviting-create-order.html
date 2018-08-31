@@ -1,0 +1,65 @@
+<div class="inviting-order">
+	<div class="top-view">
+		<img class="top-img" src="{{data.DetailImageUrl}}" alt="">
+
+		<div class="top-text">
+			<p class="name">{{data.Title}}</p>
+			<div class="price">￥ {{data.UnitPrice}} / 局</div>
+		</div>
+	</div>
+	<div class="inviting-create-order-page">
+		<!--<div class="inviting-info">-->
+		<!--<img src="../../asset/images/games/DJ_KT16.png" alt="">-->
+		<!--<div>{{data.TeacherName}}</div>-->
+		<!--</div>-->
+
+		<div class="price-info">
+			<div class="border-t">
+				<div class="title-common mlr20">下单信息</div>
+				<div class="plr20">
+					<div class="hours row-lr">
+						<span>数量</span>
+						<div>
+							<span class="left-handle js-handle" data-handle="lessHours"></span><span class="num" id="enter_num">1</span><span class="right-handle js-handle" data-handle="plusHours"></span><span>局</span>
+						</div>
+					</div>
+					<div class="row-lr">
+						<span>QQ号码<img class="star" src="../../asset/images/games/star.png" alt=""></span>
+						<div>
+							<input class="QQNum" type="number" placeholder="请填写您的QQ，方便导师与您联系">
+						</div>
+					</div>
+					<div class="row-lr">
+						<span>手机号码</span>
+						<div class="grayText">123465465</div>
+					</div>
+				</div>
+			</div>
+			<div class="border-t mt20">
+				<div class="title-common mlr20">支付方式</div>
+				<div class="way">
+				<span class="js-handle active pay-type" data-handle="payType" index="2">
+					<img src="../../asset/images/games/alipay.png" alt="">
+				</span>
+					<span class="js-handle pay-type" data-handle="payType" index="1">
+					<img src="../../asset/images/games/pin.jpg" alt="">
+				</span>
+				</div>
+			</div>
+
+		</div>
+		<div class="panel pay-panel1 hide plr20">
+			<span class="fz30">Pin码</span>
+			<div>
+				<input class="telNum" id="pin_code" type="number" placeholder="Pin码">
+			</div>
+		</div>
+	</div>
+	<div class="pay-bottom">
+		<div class="row-height"></div>
+		<div class="row-bottom fz30 border-t">
+			<span class="left-count">实付总金额：<span class="red-color"><span id="count_price">{{data.UnitPrice}}</span>元</span></span>
+			<a class="right-btn js-handle" data-handle="createOrder">确认下单</a>
+		</div>
+	</div>
+</div>

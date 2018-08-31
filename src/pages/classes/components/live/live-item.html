@@ -1,0 +1,14 @@
+{{each liveList item}}
+<li>
+	<a href="{{item.PlayType == 1 ? item.PlaybackUrl : item.OnlinePalyUrl}}">
+		<div class="liveItem">
+			<img class="radius" src={{item.DefaultImageUrl}} alt="">
+			<div>
+				<p class="title">{{item.LessonName}}</p>
+				<span class="info">【直播】{{item.LessonHourTitle}}（{{item.StartTime}}）</span>
+				<div class="name">{{item.TeacherName}}</div>
+			</div>
+		</div>
+	</a>
+</li>		
+{{/each}}

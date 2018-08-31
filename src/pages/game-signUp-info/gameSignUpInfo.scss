@@ -1,0 +1,39 @@
+@import "../../asset/common";
+
+.game-sign-up-info{
+  background: #f1ede8;
+  padding: rem(20) rem(10);
+  .info-list{
+    padding:0 rem(20) rem(100);
+    border:1px solid #e3e0db;
+    border-radius: rem(20);
+    background-color:#fff;
+    @include box-sizing();
+    li{
+      padding:rem(50) rem(14) 0;
+      min-height:rem(100);
+      border-bottom:2px solid #d9d8d4;
+      @include box-sizing();
+      .info-title{
+        font-size:rem(30);
+        color:#050100;
+      }
+      .info-con{
+        display: block;
+        padding:0 0 rem(5) rem(80);
+        overflow: hidden;
+        font-size:rem(30);
+        color:#625b51;
+        text-align: justify;
+      }
+    }
+  }
+  .btn-module{
+    margin-top:rem(145);
+    text-align: center;
+    .btn{
+      width:rem(345);
+    }
+  }
+
+}

@@ -1,0 +1,28 @@
+{{each videoList item i}}
+	<li class="videos-item">
+		<div class="videos-item-image" style="height: {{videoHeight}}px;">
+			<video
+			id="my-player-{{nextIndex + i}}"
+			height="{{videoHeight}}"
+			class="video-js vjs-default-skin vjs-fluid  vjs-big-play-centered"
+			controls 
+			preload="none" 
+			playsinline
+			data-img="{{item.DefaultImageUrl}}"
+			poster="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQImWNgYGBgAAAABQABh6FO1AAAAABJRU5ErkJggg=="
+			style="background: transparent url({{item.DefaultImageUrl}}) no-repeat center center;background-size:cover;">
+				<source src="{{item.VideoPalyUrl}}" type="video/mp4"></source>
+			</video>
+			{{if item.VideoType == 0}}
+			<div class="video-mask">
+				<span class="js-handle" data-handle="beforePlay" data-video-id="{{item.Id}}"></span>
+			</div>	
+			{{/if}}			
+		</div>
+		<div class="videos-item-info">
+			<span>{{item.Title}}&nbsp;</span>
+			<span>{{item.PublishName}}</span>
+		</div>
+	</li>
+{{/each}}
+

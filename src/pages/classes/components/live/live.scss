@@ -1,0 +1,66 @@
+@import "../../../../asset/common";
+
+.live-page{
+    height:100%;
+    padding: 0 rem(10);
+    overflow: hidden;
+    .mescroll-downwarp{
+        margin-top:rem(10);
+    }
+    .live-list{
+        padding:rem(15) 0;
+        li + li{
+            .liveItem{
+                margin-top: rem(15);
+            }
+        }
+    }
+    .liveItem{
+        background: #fff;
+        border: 1px solid #e3e0db;
+        border-radius: rem(15);
+        padding: rem(20) rem(10);
+        position: relative;
+
+        &:before{
+            content:'';
+            display: inline-block;
+            background: url('../../../../asset/images/games/play.png') no-repeat center;
+            background-size: rem(54) rem(54);
+            width: rem(54);
+            height: rem(54);
+            position: absolute;
+            bottom: rem(30);
+            left: rem(190);
+        }
+
+        >img{
+            width: rem(250);
+            height: rem(160);
+            margin-right: rem(15);
+            float: left;
+        }
+
+        >div{
+            .title{
+                font-size: rem(30);
+                color: #050100;
+                margin-bottom: rem(20);
+                @include ellipsis1();
+            }
+            .info{
+                height:rem(60);
+                line-height: rem(30);
+                font-size: rem(24);
+                color: #625b51;
+                @include ellipsis(2);
+            }
+            .name{
+                text-align: right;
+                font-size: rem(24);
+                color: #625b51;
+            }
+        }
+
+   }
+}

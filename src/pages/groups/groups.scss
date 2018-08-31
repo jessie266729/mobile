@@ -1,0 +1,77 @@
+@import "../../asset/common";
+
+.groups-layout{
+  position:relative;
+  height:100%;
+  padding-top:rem(170);
+  overflow:hidden;
+  @include box-sizing();
+  .group-list{
+    position:absolute;
+    top:0;
+    left:0;
+    width: 100%;
+    background: #252525;
+
+    .swiper-slide {
+      text-align: center;
+      font-size: rem(24);
+      line-height: rem(32);
+      color: #93908b;
+      position: relative;
+      padding: rem(10) 0;
+      @include myTransition();
+
+      img{
+        height: rem(113);
+      }
+
+      div{
+        height:rem(32);
+        @include ellipsis1();
+      }
+
+      &.active{
+        color: #ffaf00;
+
+        &:after{
+          content:'';
+          display: inline-block;
+          vertical-align: middle;
+          background:url('../../asset/images/groups/bottom.png') no-repeat center;
+          background-size: rem(113) rem(23);
+          width: rem(113);
+          height: rem(23);
+          position: absolute;
+          bottom: rem(-19);
+          left: 50%;
+          transform: translateX(-50%);
+        }
+
+      }
+
+    }
+
+  }
+
+  .group-info-list{
+    padding: rem(20) rem(10) rem(10);
+
+    .groupItem{
+      margin-bottom: rem(10);
+    }
+
+  }
+  .add-groups{
+    position: fixed;
+    right:rem(10);
+    bottom:rem(128);
+    width:rem(70);
+    height:rem(70);
+    background:url("../../asset/images/groups/icon_add.png") 0 0 no-repeat;
+    background-size:100% 100%;
+    z-index: 1001;
+    opacity: .8;
+  }
+    
+}

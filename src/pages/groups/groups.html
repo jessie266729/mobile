@@ -1,0 +1,24 @@
+<div class="groups-layout">
+
+    <div class="group-list">
+
+        <div class="swiper-wrapper">
+
+            {{each circleList item i}}
+
+                <div class="swiper-slide school-switch-touch" data-id="{{item.Id}}">
+                    <img src="{{item.IcoURL}}" alt=""/>
+                    <div>{{item.Name}}</div>
+                </div>
+
+            {{/each}}
+
+        </div>
+
+    </div>
+
+    <div id="mescroll" class="group-mescroll mescroll">
+        <ul class="group-info-list" id="dataList"></ul>
+    </div>
+    <div class="add-groups js-handle" data-handle="addGroups"></div>
+</div>

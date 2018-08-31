@@ -1,0 +1,29 @@
+<div class="personal-classes-page">
+
+	<div class="list-head flex-common">
+		<div>课程</div>
+		<div>状态</div>
+	</div>
+
+	<div class="classes-list">
+
+		{{each allData item}}
+			<div class="classes-item flex-common">
+				<div>
+					<img class="classes-image" src={{item.DefaultImageUrl}} alt="">
+					<div class="classes-info">
+						<p>{{item.LessonName}}</p>
+						<div>￥286.00</div>
+					</div>
+				</div>
+				<div>待上课</div>
+			</div>
+		{{/each}}
+
+		{{if allData.length <= 0}}
+			<div class="noData">暂无数据</div>
+		{{/if}}
+
+	</div>
+
+</div>

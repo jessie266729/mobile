@@ -1,0 +1,35 @@
+@import "../../asset/common";
+
+.invite-success-page{
+    height: 100%;
+    padding: rem(15) rem(10) rem(60);
+    box-sizing: border-box;
+    .success-info{
+        height: 100%;
+        background: #fff;
+        padding: rem(20) rem(25) 0;
+        font-size: rem(30);
+        color: #625b51;
+        line-height: rem(70);
+        position: relative;
+
+        >div:nth-child(1){
+            color: #050100;
+        }
+
+        >div.contactWay{
+            position: absolute;
+            right: rem(40);
+            top: rem(160);
+            text-align: center;
+            font-size: rem(24);
+            line-height: 1;
+            >img{
+                width: rem(55);
+                height: rem(60);
+                margin-top: rem(15);
+            }
+        }
+
+    }
+}

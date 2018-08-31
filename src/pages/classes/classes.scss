@@ -1,0 +1,54 @@
+@import "../../asset/common";
+
+.classes-page{
+    height: 100%;
+    background: #f1ede8;
+    position: relative;
+    padding-top: rem(60);
+    @include box-sizing();
+    overflow: auto;
+    .classes-item-container{
+        height: 100%;
+        overflow: auto;
+    }
+    >.classes-page-tabBar{
+        font-size: rem(30);
+        color: #93908b;
+        background: #252525;
+        height: rem(60);
+        line-height: rem(60);
+        text-align: center;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        z-index: 101;
+
+        span{
+            display: inline-block;
+            width: rem(215);
+        }
+        
+        span.active{
+            color: #ffaf00;
+            position: relative;
+
+            &:after{
+                content:'';
+                display: inline-block;
+                vertical-align: middle;
+                background:url('../../asset/images/groups/bottom.png') no-repeat center;
+                background-size: rem(113) rem(23);
+                width: rem(113);
+                height: rem(23);
+                position: absolute;
+                bottom: rem(-19);
+                left: 50%;
+                transform: translateX(-50%);
+            }
+
+        }
+
+    }
+
+}

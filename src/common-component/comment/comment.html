@@ -1,0 +1,32 @@
+<div class="comment">
+    <div class="comment-header">
+        <div class="comment-num">评论 {{commentCount}}</div>
+        <div class="like-num">
+            <span class="icon-heart"></span> 
+            <span>{{likeCount}}</span>
+        </div>
+    </div>
+    <ul class="comment-info-list">
+        {{each commentList as itemData i}}
+            <li class="clearFix" data-user-id="{{itemData.UserId}}">
+                <div class="photo fl">
+                    <img src="../../asset/images/groupItem/headImage.png" alt="">
+                </div>
+                <div class="info-modal">
+                    <p class="name">{{itemData.NickName}}</p>
+                    <p class="time">{{itemData.InDate}}</p>
+                    <p class="content js-handle" data-handle="handleComment">{{itemData.CommentReplyType === 1 ? '@' + itemData.ReplyUserNickName + ' ' + itemData.Content : itemData.Content}}</p>
+                    <div class="operator">
+                        <span class="icon-comment js-handle" data-handle="handleComment"></span>
+                    </div>
+                </div>
+            </li>
+        {{/each}}                
+    </ul>
+    <div class="comment-input">
+        <input class="input-box" value="" type="text" />       
+        <div class="send-btn">
+            <span class="icon-expression"></span>
+        </div>
+    </div>
+</div>

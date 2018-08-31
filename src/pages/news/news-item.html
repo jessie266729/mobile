@@ -1,0 +1,18 @@
+{{each newsList item i}}
+
+    <a href="#/newsDetail/{{item.Id}}">
+        <div class="news-item">
+            <div class="news-title">{{item.Title}}</div>
+            <div class="news-images clearFix">
+                {{each item.ImageUrlList nextItem}}
+                    <img src={{nextItem}} alt=""/>
+                {{/each}}
+            </div>
+            <div class="news-info clearFix">
+                <div>{{item.PublishNickName}} &nbsp;&nbsp; 127条评论 &nbsp;&nbsp; 26分钟前</div>
+                <img src="../../asset/images/matches/close.png" alt=""/>
+            </div>
+        </div>
+    </a>
+
+{{/each}}

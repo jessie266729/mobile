@@ -1,0 +1,82 @@
+@import "../../../../asset/common";
+
+.personal-classes-page{
+    background: #fff;
+    border-radius: rem(10);
+    padding-top: rem(3);
+    .flex-common{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        >div:nth-child(1){
+            flex: 3;
+            margin: 0 rem(40) 0 rem(5);
+        }
+        >div:nth-child(2){
+            flex: 1;
+        }
+        >div:nth-child(3){
+            flex: 1;
+        }
+    }
+    .list-head{
+        font-size: rem(24);
+        color: #fff;
+        height: rem(55);
+        line-height: rem(55);
+        text-align: center;
+        background: #ffaf00;
+        border-top-left-radius: rem(10);
+        border-top-right-radius: rem(10);
+        padding: 0 rem(20);
+        >div:nth-child(1){
+            text-align: left;
+        }
+    }
+    .classes-list{
+        border-top: 1px solid #ffd477;
+        border-left: 1px solid #e3e0db;
+        border-top: 1px solid #e3e0db;
+        border-bottom: 1px solid #e3e0db;
+        .classes-item{
+            font-size: rem(24);
+            line-height: rem(30);
+            margin: 0 rem(20);
+            text-align: center;
+            padding: rem(15) 0 rem(25);
+            >div:nth-child(1){
+                .classes-image{
+                    width: rem(200);
+                    height: rem(130);
+                    float: left;
+                }
+                .classes-info{
+                    float: left;
+                    margin-left: rem(20);
+                    width: rem(160);
+                    height: rem(130);
+                    position: relative;
+                    >p{
+                        color: #050100;
+                    }
+                    >div{
+                        font-size: rem(30);
+                        color: #ffaf00;
+                        position: absolute;
+                        bottom: 0;
+                        left: 0;
+                    }
+                }
+            }
+            >div:nth-child(2){
+                color: #625b51;
+            }
+            >div:nth-child(3){
+                color: #009cff;
+            }
+        }
+        .classes-item + .classes-item{
+            border-top: 1px solid #d9d8d4;
+        }
+    }
+}

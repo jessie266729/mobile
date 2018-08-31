@@ -1,0 +1,40 @@
+@import "../../asset/common";
+
+.match-details-page{
+  width: 100%;
+  height: 100%;
+  position: relative;
+
+  >img{
+    width: 100%;
+  }
+  
+  .detailsInfo{
+    padding:rem(30) rem(20);  
+    >div{
+        height:100%;
+        overflow: auto;
+      text-align: center;
+      >div:nth-child(1){
+        font-size: rem(48);
+        color: #050100;
+        line-height: rem(65);
+      }
+      >div:nth-child(2){
+        font-size: rem(36);
+        color: #050100;
+        line-height: rem(70);
+      }
+      >div:nth-child(3){
+        padding-top:rem(10);
+        font-size: rem(36);
+        color: #625b51;
+      }
+    }
+    img{
+        max-width: 100% !important;;
+    }
+
+  }
+    
+}

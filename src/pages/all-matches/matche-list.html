@@ -1,0 +1,13 @@
+{{each matchesList item}}
+    <div class="matches-item" data-id="{{item.Id}}">
+        <img src={{item.DefaultImageUrl}} alt="">
+        <div class="matches-info">
+            <p>{{item.CompetitionName}}</p>
+            <span>{{item.CompetitionStatus}}</span>
+            <div>
+                <span class="js-handle" data-handle="toMatchDetails">赛事详情</span>
+                <span class="js-handle" data-handle="toSignUpInfo">比赛报名</span>
+            </div>
+        </div>
+    </div>
+{{/each}}

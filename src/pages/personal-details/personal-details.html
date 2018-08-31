@@ -1,0 +1,44 @@
+<div class="personal-details-page">
+
+	<div class="page-head">
+		<div class="headerImg">
+			{{if userInfo.Url}}
+				<img class="radius-circle" src={{userInfo.Url}} alt="">
+			{{else}}
+				<img class="radius-circle" src="../../asset/images/personal/headImg.png" alt="">
+			{{/if}}
+			{{if userInfo.Sex == 1}}
+			<img src="../../asset/images/personal/male.png" alt="">
+			{{else if userInfo.Sex == 2}}
+				<img src="../../asset/images/personal/female.png" alt="">
+			{{/if}}
+			<div class="cert-info">
+				{{if userInfo.AuthStatus=='30'}}
+					<img src="../../asset/images/personal/hasCert.png" alt="">
+				{{else}}				
+					<img src="../../asset/images/personal/notCert.png" alt="">
+					<span class="js-handle" data-handle="toApplyCert" data-status="{{userInfo.AuthStatus}}">点击认证</span>
+				{{/if}}
+            </div>
+        </div>
+		<p>{{userInfo.NickName}}</p>
+		<span>{{userInfo.Idiograph || '啊哦~！这家伙很懒，什么都没留下~'}}</span>
+		<div class="schoolInfo clearFix">
+			<div><span>学校</span> : {{userInfo.SchoolName || '未知'}}</div>
+			<div><span>专业</span> : {{userInfo.ProfessionName || '未知'}}</div>
+			<div><span>学号</span> : {{userInfo.StudentNumber || '未知'}}</div>
+			<div><span>学分</span> : {{userInfo.Score || '未知'}}</div>
+		</div>
+	</div>
+
+	<div class="selector">
+		<span class="active">全部</span><span>图文</span>
+	</div>
+
+	<div id="person-mescroll" class="mescroll gropusList">
+		<ul id="postMsgList" class="group-info-list"></ul>
+	</div>
+	{{if isLoginUser}}
+	<!-- <div class="add-groups js-handle" data-handle="addGroups"></div> -->
+	{{/if}}
+</div>

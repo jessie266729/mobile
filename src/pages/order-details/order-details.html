@@ -1,0 +1,79 @@
+<div class="create-order-page pt10 pb40 mt15 mlr10 border-a white-bg">
+	<div class="color999 fz32 pl20">
+		<span>订单号：</span>
+		<span class="mleft">{{orderDetail.Id}}</span>
+		<span class="status-common fr">
+		{{if orderDetail.Status == 10}}
+			进行中
+		{{else if orderDetail.Status == 20}}
+			已完成
+		{{else if orderDetail.Status == -10}}
+			已取消
+		{{else if orderDetail.Status == 0}}
+			待支付
+		{{/if}}
+		</span>
+	</div>
+	<div class="order-container plr10 black-color fz28">
+		<div class="account-info">
+			<img src="{{orderDetail.DefaultImageUrl}}" alt="">
+			<div>{{orderDetail.Title}}</div>
+		</div>
+		<div class="border-t plr20">
+			<div class="title-common">订单信息</div>
+			<div class="poo p-pj ptb10">
+				<span>服务类型：</span>
+				<div >{{orderDetail.GameIName}}</div>
+			</div>
+			<div class="poo p-pj ptb10">
+				<span>单价：</span>
+				<div >￥{{orderDetail.UnitPrice}}元</div>
+			</div>
+			<div class="poo p-pj ptb10">
+				<span>订单数量：</span>
+				<div >{{orderDetail.Quantity}}{{orderDetail.SoType===2?'局':orderDetail.SetMeal===10?'小时':orderDetail.SetMeal===20?'天':'月'}}</div>
+			</div>
+			<div class="poo p-pj ptb10">
+				<span>实付金额：</span>
+				<div >￥{{orderDetail.PayAmount}}元</div>
+			</div>
+		</div>
+		<div class="border-t plr20 mt20">
+			<div class="title-common">交易信息</div>
+			<div class="poo p-pj ptb10">
+				<span>下单时间：</span>
+				<div >{{orderDetail.InDate}}</div>
+			</div>
+			<div class="poo p-pj ptb10">
+				<span>支付时间：</span>
+				<div >{{orderDetail.PayTime}}</div>
+			</div>
+		</div>
+		{{if orderDetail.SoType===1}}
+		<div class="border-t plr20 mt20">
+			<div class="title-common">账号信息</div>
+			<div class="poo p-pj ptb10">
+				<span>账号：</span>
+				<div >{{orderDetail.AccountNo}}</div>
+			</div>
+			<div class="poo p-pj ptb10">
+				<span>密码：</span>
+				<div >{{orderDetail.Pwd}}</div>
+			</div>
+		</div>
+		{{else}}
+		<div class="border-t plr20 mt20">
+			<div class="title-common">导师信息</div>
+			<div class="poo p-pj ptb10">
+				<span>导师：</span>
+				<div >{{orderDetail.TeacherName}}</div>
+			</div>
+			<div class="poo p-pj ptb10">
+				<span>导师QQ：</span>
+				<div >{{orderDetail.TeacherQQ}}</div>
+			</div>
+		</div>
+		{{/if}}
+
+	</div>
+</div>

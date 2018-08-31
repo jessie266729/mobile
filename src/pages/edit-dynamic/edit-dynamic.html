@@ -1,0 +1,26 @@
+<div class="edit-dynamic-page">
+
+	<textarea class="dynamic-content" name="dynamic-content" rows="5" maxlength="70" placeholder="输入此刻的想法..."></textarea>
+
+	<div class="image-picker img-box clearFix">
+		<div class="choose-image fl">			
+			<form id="file" action="" enctype="multipart/form-data">
+				<input type="file" name="uploadFile" multiple="multiple" />
+			</form>
+			<div></div>
+		</div>
+	</div>
+
+	<div class="operator">
+		<div class="limit">
+			<img src="../../asset/images/groups/eyes.png" alt="">
+			<span>谁可以看</span>
+			<div>仅当前圈子可见：{{CircleName}}</div>
+		</div>
+		<div class="buttons clearFix">
+			<!-- <div>取消</div> -->
+			<div class="js-handle" data-handle="handlePost">发布</div>
+		</div>
+	</div>
+
+</div>

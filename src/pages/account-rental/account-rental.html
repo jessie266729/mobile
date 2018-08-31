@@ -1,0 +1,83 @@
+<div class="account-rental-page">
+    
+    <img src={{data.DetailImageUrl}} alt="">
+
+    <div>
+        <p class="name">{{data.Title}}</p>
+        <div class="infos">
+            <span>游戏区服：{{data.GameArea}}</span>
+            <span>租号限制：起租时间2小时，租号0次及以上才可租用此号</span>
+            <span>服务保障： {{data.ServiceAssurance}}</span>
+            <span>温馨提示：禁止使用外挂</span>
+        </div>
+        <div class="price">￥ {{data.UnitPrice}} / 小时</div>
+        <div class="operator js-handle" data-handle="toCreateOrder">立即租用</div>
+    </div>
+
+    <div class="detail-info">
+
+        <div class="account-info infoItem-common">
+            <div class="title-common">账号概要</div>
+            <div class="content-common">
+                {{@data.AccountSummary}}
+                <!-- <span>适用系统: 安卓</span><span>适用系统: 安卓</span><span>适用系统: 安卓</span>
+                <span>适用系统: 安卓</span><span>适用系统: 安卓</span><span>适用系统: 安卓</span> -->
+            </div>
+        </div>
+
+        <div class="infoItem-common">
+            <div class="title-common">详细描述</div>
+            <div class="content-common">
+                {{@data.Content}}
+            </div>
+        </div>
+
+        <div class="infoItem-common">
+            <div class="title-common">图片展示</div>
+            <div class="images-show content-common">
+                {{each data.ImageUrlList item}}
+                    <img src={{item}} alt="">
+                {{/each}}
+                {{if data.ImageUrlList && data.ImageUrlList.length % 3 === 2}}
+                    <div></div>
+                {{/if}}
+            </div>
+        </div>
+
+        <div class="infoItem-common">
+            <div class="title-common">租号须知</div>
+            <div class="content-common">
+                    1.用户请遵守GG平台用户租号协议，如果用户不遵守协议，比如在游戏中诈骗、发广告、毁号、恶意删除好友等，GG平台有权永久封停用户账号，如需赔偿账号损失，GG平台保留对用户法律起诉的权利。
+
+                    2.用户租号过程中请勿使用第三方软件(包含外挂、脚本、改游戏数据等软件)，GG平台将扣除用户租金和押金赔偿给号主，情节严重者将永久封停GG账号，如需赔偿账号损失，GG平台保留对用户法律起诉的权利。
+                    
+                    3.请用户文明游戏，请勿“逃跑”“挂机”“送人头”等可能导致账号被封的行为，如经核实用户出现以上情况，将扣除租金和押金给号主，情节恶意的将封停GG平台账号。
+                    
+                    4.针对恶意投诉者(如密码正确，投诉密码错误，玩一个小时投诉顶号，账号与描述不符等情况)，GG平台会查实，如属实将冻结GG平台账号
+                    
+                    5.用户在GG平台租号，如果投诉率和撤单率过高，GG平台会查实投诉情况，如果恶意投诉将被判定为恶意租号，将会受到相应的重复，严重者封停GG平台账号。
+                    
+                    6.商品详情界面会有属性显示是否允许打排位赛(比如LOL 王者荣耀)如号主设置不能打排位赛，用户打了排位，有押金的情况下会扣除押金给号主。
+                    
+                    7.为了您的游戏体验及账号安全，我们会对您的电脑桌面进行监控，请清理第三方软件在使用上号器，否则订单会被冻结。检测到存在游戏外挂情况，一律扣除订单租金和押金。                    
+            </div>
+        </div>
+
+        <div class="infoItem-common">
+            <div class="title-common">温馨提示</div>
+            <div class="content-common">
+                    1.租号完成后可在APP 点击—我是租客—我租的号中查看租号订单，在网站—个人中心—我租的号中查看租号订单
+
+                    2.租号过程中，如遇到密码错误，描述不符等情况，请及时投诉，可增加投诉的成功率。
+                    
+                    3.租号过程中，端游如15分钟之内没有上号，可申请投诉退单。如果超过15分钟，GG平台将弹性计算（例：不足1小时以1小时计算）
+                    
+                    4.针对恶意租客，恶意毁号的用户，经发现一律封停GG账户。
+                    
+                    备注：请勿使用第三方软件(包含外挂、脚本、改游戏数据工具)，GG平台将永久封停GG账号并保留对用户法律起诉的权利。
+            </div>
+        </div>
+
+    </div>
+
+</div>

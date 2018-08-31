@@ -1,0 +1,190 @@
+@import "../../asset/common";
+
+$themeBlack: #141414;
+$hotColor: #585757;
+$themeYellow: #ffaf00;
+
+.training-record-page{
+    height: 100%;
+    .select-options{
+        background: $themeBlack;
+        padding: rem(16) rem(10) rem(5);
+        .list{
+            font-size: rem(30);
+            color: $hotColor;
+            overflow: hidden;
+            .list-item{
+                display: inline-block;
+                width: rem(120);
+                height: rem(50);
+                line-height: rem(50);
+                text-align: center;
+                margin-bottom: rem(10);
+                color: $hotColor;
+                font-size: rem(24);
+                border: 1px solid $themeBlack;
+                &.active{
+                color: $themeYellow;
+                border: 1px solid $themeYellow;
+                border-radius: rem(15);
+                }
+            }
+        }
+    }
+    .record-list{
+        padding: 0 rem(10);
+        .record-item{
+            position: relative;
+            background: #fff;
+            padding: rem(5) rem(20) rem(17);
+            border-radius: rem(15);
+        }
+        .record-item + .record-item{
+            margin-top: rem(10);
+        }
+        .record-orderNo{
+            border-bottom: 1px solid #d9d8d4;
+            span{
+                font-size: rem(22);
+                color: #050100;
+                line-height: rem(45);
+                i{
+                    font-style: normal;
+                    color:#625b51;
+                }
+            }
+            >span:first-child{
+                margin-right: rem(40);
+            }
+        }
+        .record-status{
+            >span:first-child{
+                font-size: rem(24);
+                color: #050100;
+                line-height: rem(80);
+            }
+            .status{
+                float: right;
+                width: rem(135);
+                height: rem(50);
+                line-height: rem(50);
+                font-size: rem(26);
+                color: #fff;
+                text-align: center;
+                background: #05d1ca;
+                border-top-left-radius: rem(50);
+                border-bottom-left-radius: rem(50);
+                margin: rem(20) rem(-23) 0 0;
+                &:before{
+                    content:"";
+                    display: inline-block;
+                    width: rem(13);
+                    height: rem(13);
+                    border-radius: 100%;
+                    background: #fff;
+                    margin-right: rem(15);
+                    vertical-align: middle;
+                    margin-top: rem(-3);
+                }
+                &.underway{
+                    background: #9f63e4;
+                }
+                &.hasCancel{
+                    background: #cec9c3;
+                }
+            }
+        }
+        .record-info{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            >img{
+                flex: 1.3;
+                width: rem(130);
+                height: rem(130);
+            }
+            >p{
+                flex: 2;
+                width: rem(230);
+                padding: 0 rem(30) 0 rem(18);
+                font-size: rem(24);
+                color: #050100;
+                line-height: rem(37);
+                @include ellipsis(4);
+            }
+            >div{
+                flex: 3.5;
+                .account-info{
+                    position: relative;
+                    height:rem(50);
+                    line-height: rem(48);
+                    border:1px solid #cec9c3;
+                    border-radius: rem(10);
+                    background-color:#eeedeb;
+                    font-size:rem(22);
+                    color:#625b51;
+                    padding-left: rem(15);
+                    @include box-sizing();
+                    input{
+                        border: none;
+                        height: 100%;
+                        display: inline-block;
+                        background: #ffffff;
+                        padding-left: rem(5);
+                    }
+                    .copy{
+                        position: absolute;
+                        top:0;
+                        right:0;
+                        width:rem(110);
+                        height:rem(50);
+                        line-height: rem(48);
+                        text-align: center;
+                        border:1px solid transparent;
+                        border-top-right-radius: rem(10);
+                        border-bottom-right-radius: rem(10);
+                        background-color:#ffaf00;
+                        font-size:rem(22);
+                        color:#fff;
+                        @include box-sizing();
+                    }
+                }
+                .account-info:first-child{
+                    margin-bottom: rem(20);
+                }
+            }
+            .record-operator{
+                flex:inherit;
+                position: absolute;
+                bottom:rem(30);
+                right:rem(20);
+                width:rem(250);
+                .contactWay{
+                    float: left;
+                    text-align: center;
+                    font-size: rem(24);
+                    color:#625b51;
+                    line-height: 1;
+                    >img{
+                        width: rem(55);
+                        height: rem(60);
+                        margin-top: rem(15);
+                    }
+                }
+                .cancel{
+                    font-size: rem(24);
+                    color: #fff;
+                    line-height: rem(53);
+                    height: rem(53);
+                    width: rem(135);
+                    border-radius: rem(53);
+                    text-align: center;
+                    background: #fc870e;
+                    position: absolute;
+                    right: 0;
+                    bottom: rem(0);
+                }
+            }
+        }
+    }
+}

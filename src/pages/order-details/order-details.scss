@@ -1,0 +1,23 @@
+@import "../../asset/common";
+.order-container{
+    padding: rem(5) rem(20) 0;
+    .account-info{
+        padding: rem(10) 0 rem(35);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        >img{
+            width: rem(200);
+            height: rem(200);
+            flex: 1;
+        }
+        >div{
+            text-align: center;
+            font-size: rem(24);
+            color: #050100;
+            line-height: rem(38);
+            padding-left: rem(35);
+            flex: 3;
+        }
+    }
+}

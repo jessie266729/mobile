@@ -1,0 +1,145 @@
+@import "../../asset/normal";
+.top-view{
+    .top-img{
+        width: 100%;
+        display: block;
+    }
+    .top-text{
+        display: flex;
+        justify-content:space-between;
+        background: #252525;
+        .name{
+            font-size: rem(28);
+            color: #fff;
+            line-height: rem(38);
+            padding: rem(10) 0;
+        }
+        .price{
+            font-size: rem(36);
+            color: #ffaf00;
+            margin: rem(15) 0;
+        }
+    }
+}
+.inviting-create-order-page{
+    background: #fff;
+    padding: 0 0 rem(20);
+    border: 1px solid #e3e0db;
+    border-radius: rem(12);
+    margin: rem(10);
+    input{
+        height: rem(58);
+        background: #eeedeb;
+        color: #625b51;
+        border: 1px solid #cec9c3;
+        border-radius: rem(12);
+        font-size: rem(24);
+        padding: 0 rem(10) 0 rem(15);
+    }
+    .way{
+        margin-top: rem(20);
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        >span{
+            width: rem(101);
+            height: rem(101);
+            cursor: pointer;
+            position: relative;
+            >img{
+                display: block;
+                width: 100%;
+                height: 100%;
+            }
+        }
+        .active{
+            width: rem(202);
+            height: rem(202);
+        }
+    }
+    .pay-panel1{
+        margin-top: rem(20);
+        input{
+            width: 100%;
+            box-sizing: border-box;
+        }
+    }
+    .price-info{
+        font-size: rem(30);
+        color: #050100;
+
+        .row-lr{
+            line-height: rem(80);
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .hours{
+            .left-handle{
+                background: url('../../asset/images/games/less.png') no-repeat center;
+                width: rem(53);
+                height: rem(58);
+                background-size: rem(53) rem(58);
+            }
+            .right-handle{
+                background: url('../../asset/images/games/plus.png') no-repeat center;
+                width: rem(52);
+                height: rem(58);
+                background-size: rem(52) rem(58);
+                margin-right: rem(25);
+            }
+            .num{
+                width: rem(135);
+                height: rem(58);
+                line-height: rem(58);
+                text-align: center;
+                background: #eeedeb;
+                border-top: 1px solid #cec9c3;
+                border-bottom: 1px solid #cec9c3;
+                box-sizing: border-box;
+            }
+            span{
+                display: inline-block;
+                vertical-align: middle;
+            }
+        }
+        .star{
+            width: rem(30);
+            height: rem(30);
+            margin: rem(-5) 0 0 rem(10);
+            vertical-align: middle;
+        }
+        
+        .QQNum{
+            width: rem(380);
+        }
+        .telNum{
+            width: rem(380);
+        }
+
+    }
+}
+.pay-bottom{
+    .row-height{
+        height: rem(100);
+    }
+    .row-bottom{
+        position: fixed;
+        bottom: 0;
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        line-height: rem(80);
+        background: #ffffff;
+        .left-count{
+            flex: 3;
+            padding-left: rem(20);
+        }
+        .right-btn{
+            flex: 1;
+            color: #ffffff;
+            background: #ffaf00;
+            text-align: center;
+        }
+    }
+}

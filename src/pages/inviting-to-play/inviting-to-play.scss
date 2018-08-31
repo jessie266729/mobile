@@ -1,0 +1,110 @@
+@import "../../asset/common";
+
+.inviting-to-play-page{
+  
+    >img{
+        width: 100%;
+        display: block;
+    }
+
+    >div{
+        background: #252525;
+        padding: 0 rem(25) rem(15);
+        position: relative;
+
+        .name{
+            font-size: rem(28);
+            color: #fff;
+            line-height: rem(38);
+            padding: rem(10) 0;
+        }
+
+        .infos{
+            font-size: rem(24);
+            color: #b2b1ad;
+            line-height: rem(42);
+        }
+
+        .price{
+            font-size: rem(36);
+            color: #ffaf00;
+            margin: rem(15) 0;
+        }
+
+        .otherInfo{
+            font-size: rem(24);
+            color: #b2b1ad;
+            line-height: rem(42);
+        }
+
+        .operator{
+            font-size: rem(30);
+            color: #fff;
+            height: rem(55);
+            line-height: rem(55);
+            border-radius: rem(55);
+            padding: 0 rem(25);
+            text-align: center;
+            background: #ffaf00;
+            position: absolute;
+            right: rem(40);
+            bottom: rem(15);
+        }
+
+    }
+
+    .detail-info{
+        background: #fff;
+        padding: 0 rem(20);
+        border: 1px solid #e3e0db;
+        border-radius: rem(12);
+        margin: rem(10);
+        .infoItem-common{
+            padding: 0 rem(10);
+            border-bottom: 1px solid #d9d8d4;
+        }
+        .title-common{
+            font-size: rem(24);
+            color: #fff;
+            text-align: center;
+            background: #ffaf00;
+            width: rem(180);
+            height: rem(50);
+            line-height: rem(50);
+            border-bottom-left-radius: rem(10);
+            border-bottom-right-radius: rem(10);
+        }
+        .content-common{
+            font-size: rem(24);
+            color: #625b51;
+            padding: rem(15) 0;
+            line-height: rem(32);
+        }
+
+        .player-info .content-common{
+            span{
+                display: inline-block;
+                width: 50%;
+                line-height: rem(40);
+            }
+        }
+
+        .player-intro img{
+            width: 55%;
+            display: block;
+            margin-bottom: rem(10);
+        }
+
+        .images-show{
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            padding-bottom: 0;
+            >img{
+                width: rem(170);
+                margin-bottom: rem(15);
+            }
+        }
+    }
+    
+}

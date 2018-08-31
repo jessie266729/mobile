@@ -1,0 +1,95 @@
+@import "../../asset/common";
+
+.login-page{
+    // position:fixed;
+    // top:0;
+    // left:0;
+    // right:0;
+    // bottom:0;
+    // background-color:#f1ede8;
+    // overflow-x:hidden;
+    // overflow-y: scroll;
+    // z-index:1002;
+    .logos{
+        margin-top:rem(95);
+        & > img{
+            display:block;
+            &.logo-1{
+                width:rem(280);
+                height:rem(280);
+                margin:0 auto;
+            }
+            &.logo-2{
+                width:rem(389);
+                height:rem(73);
+                margin:rem(26) auto rem(12);
+            }
+        }
+        & > p{
+            font-size:rem(36);
+            color:#252525;
+            text-align:center;
+        }
+    }
+    .login-body{
+        width:rem(530);
+        margin:rem(200) auto rem(110);
+        p{
+            & + p{
+                margin-top:rem(25);
+            }
+            input{
+                text-align: center;
+            }
+        }
+        .links{
+            padding:0 rem(10);
+            margin-top:rem(20);
+            a{
+                font-size:rem(24);
+                color:#625b51;
+                text-decoration: underline;
+            }
+        }
+    }
+    .login-third-party{
+        width:rem(420);
+        margin:0 auto rem(50);
+        .title{
+            position:relative;
+            height:rem(24);
+            text-align: center;
+            line-height: rem(24);
+            &:before{
+                content:'';
+                position: absolute;
+                top:rem(11);
+                left:0;
+                width:100%;
+                height:1px;
+                background-color:#625b51;
+                z-index:0;
+            }
+            & > span{
+                position: relative;
+                padding:0 rem(12);
+                font-size:rem(24);
+                color:#625b51;
+                background-color:#f1ede8;
+                z-index: 10;
+            }
+        }
+        .icon-list{
+            margin-top:rem(20);
+            text-align:center;
+            li{
+                display: inline-block;
+                img{
+                    display: block;
+                    width:rem(92);
+                    height:rem(91);
+                }
+            }
+        }
+    }
+}

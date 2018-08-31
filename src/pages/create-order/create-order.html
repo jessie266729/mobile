@@ -1,0 +1,50 @@
+<div class="create-order">
+	<div class="top-view">
+		<img class="top-img" src="{{data.DetailImageUrl}}" alt="">
+	</div>
+	<div class="create-order-page">
+		<div class="price-info pb30">
+			<div class="tc-type">
+				<div class="title-common mlr20 mb20">选择套餐</div>
+				<div class="pay-panel2 panel plr20">
+					<span class="js-handle zfb-pay-type active" index="10" data-handle="zfbPayType">{{data.UnitPrice}}元/小时</span>
+					<span class="js-handle zfb-pay-type" index="20" class="zfbPayType" data-handle="zfbPayType">{{data.UnitDayPrice}}元/天</span>
+					<span class="js-handle zfb-pay-type" index="30" class="zfbPayType" data-handle="zfbPayType">{{data.UnitMonthPrice}}元/月</span>
+				</div>
+				<div class="pay-panel1 panel hide plr20">
+					<span class="zfb-pay-type active">学生套餐</span>
+				</div>
+			</div>
+			<div class="border-t mt30">
+				<div class="title-common mlr20">选择时长</div>
+				<div class="hours plr20 mt20">
+					<span class="left-handle js-handle" data-handle="lessHours"></span><span class="num" id="enter_num">1</span><span class="right-handle js-handle" data-handle="plusHours"></span><span id="pay_unit">小时</span>
+				</div>
+			</div>
+			<div class="border-t mt30">
+				<div class="title-common mlr20">支付方式</div>
+				<div class="way">
+					<span class="pay-type active js-handle" data-handle="payType" index="2">
+						<img src="../../asset/images/games/alipay.png" alt="">
+					</span>
+								<span class="pay-type js-handle" data-handle="payType" index="1">
+						<img src="../../asset/images/games/pin.jpg" alt="">
+					</span>
+				</div>
+			</div>
+			<div class="pay-panel1 panel hide plr20">
+				<span class="fz30">Pin码</span>
+				<div>
+					<input class="telNum" id="pin_code" type="number" placeholder="Pin码">
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="pay-bottom">
+		<div class="row-height"></div>
+		<div class="row-bottom fz30 border-t">
+			<span class="left-count">实付总金额：<span class="red-color"><span id="count_price">{{data.UnitPrice}}</span>元</span></span>
+			<a class="right-btn js-handle" data-handle="createOrder">确认下单</a>
+		</div>
+	</div>
+</div>
