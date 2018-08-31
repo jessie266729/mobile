@@ -13,7 +13,8 @@ export default function Header(imgList,index) {
                 paginationClickable :true,
                 paginationType : 'bullets'
             });
-
+            $(".show-img-container").css({height:"0",top:"50%"});
+            $(".show-img-container").animate({height:"100%",top:"0"},500);
             this.bindEvent();
         },
         bindEvent: function() {
@@ -32,7 +33,10 @@ export default function Header(imgList,index) {
                 isZoom = true;
             })
             .on('click',function(){
-                isZoom || $parent.remove();
+                isZoom || $parent.fadeOut();
+                setTimeout(function () {
+                    isZoom || $parent.remove();
+                },500);
             });
         },
     };
