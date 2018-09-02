@@ -116,10 +116,9 @@
         bottom:0;
         left:0;
         width:100%;
-        height:rem(72);
-        padding:rem(8) rem(142) rem(8) rem(24);
+        padding:rem(8) rem(24) rem(8) rem(24);
         @include box-shadow-outset(2px,2px,4px,4px,#d9d8d4);
-        background-color:rgba(225,225,225,.7);
+        background: #ffffff;
         @include box-sizing();
         z-index:1000;
         .input-box{
@@ -143,16 +142,28 @@
                 overflow: hidden;
             }
         }
+        .comment-panel{
+            position: relative;
+            padding-right: rem(100);
+        }
+        .qq-face-panel{
+            height: rem(200);
+            overflow-y: auto;
+            img{
+                width: rem(48);
+                height: rem(48);
+            }
+        }
         .send-btn{
             position:absolute;
             top:0;
             right:0;
-            width:rem(142);
+            width:rem(100);
             height:rem(72);
             text-align: center;
             .icon-expression{
                 display: inline-block;
-                margin-top:rem(13);
+                margin-top:rem(8);
                 width:rem(45);
                 height:rem(45);
                 background:url('../../asset/images/icon_face.png') 0 0 no-repeat;

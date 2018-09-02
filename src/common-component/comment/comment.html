@@ -1,4 +1,4 @@
-<div class="comment">
+<div class="comment comment-handle">
     <div class="comment-header">
         <div class="comment-num">评论 {{commentCount}}</div>
         <div class="like-num">
@@ -24,9 +24,18 @@
         {{/each}}                
     </ul>
     <div class="comment-input">
-        <input class="input-box" value="" type="text" />       
-        <div class="send-btn">
-            <span class="icon-expression"></span>
+        <div class="comment-panel">
+            <input class="input-box" value="" type="text" />
+            <div class="send-btn">
+                <span class="icon-expression js-handle" data-handle="qqFaceShow"></span>
+            </div>
         </div>
+        <div class="qq-face-panel hide">
+            {{each listFace as qqFace i}}
+            <img src="{{qqFace}}"/>
+
+            {{/each}}
+        </div>
+
     </div>
 </div>

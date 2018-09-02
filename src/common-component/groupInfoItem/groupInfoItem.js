@@ -60,7 +60,7 @@ export default function GroupInfoItem($el, itemData, onlyOne) {
                 return;
             }
             $(".comment-input")
-            .slideDown(500)
+            .slideDown(200)
             .find(".input-box")
             .attr('data-type','0')
             .attr('data-user-id',itemData.UserId)

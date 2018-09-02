@@ -9,7 +9,13 @@ export default function Comment($el, commentData, isCommit, callback) {
             let token = Util.getCookie('AccessToken');
 
             this.hasLogin = !!token || false;
-
+            let listFace = [];
+            for(let i = 0,len = 75;i<len;i++){
+                let qqGif = require('../../asset/images/arclist/'+(i+1)+'.gif');
+                //let qqGif = '../../asset/images/arclist/'+(i+1)+'.gif';
+                listFace.push(qqGif);
+            }
+            commentData.listFace = listFace;
             $el.append(CommentTpl(commentData));
             this.bindEvent();
 
@@ -25,15 +31,16 @@ export default function Comment($el, commentData, isCommit, callback) {
             }
             $('.dynamicDetails-layout').off('click').on('click',function (e) {
                if($(e.target).parents('.comment-input').length<=0 && $(e.target).data('handle')!=='handleComment'){
-                   $(".comment-input").slideUp(500);
+                   $(".comment-input").slideUp(200);
                    $(".dynamicDetails-layout").removeClass("hasCommentInput");
+                   $('.qq-face-panel').addClass('hide');
                }
             });
         },
         bindEvent: function() {
             let _this = this;
             //公共事件添加
-            $(".comment-info-list .js-handle").on("click",function(e){
+            $(".comment-handle .js-handle").on("click",function(e){
                 let $this = $(this);
                 let handle = $this.data('handle');
                 _this[handle] && _this[handle](e,$this);
@@ -76,6 +83,10 @@ export default function Comment($el, commentData, isCommit, callback) {
                 }
             })
         },
+        qqFaceShow:function (e,$this) {
+            $('.qq-face-panel').removeClass('hide');
+
+        },
         handleComment: function(e,$this) {
             if(!this.hasLogin){
                 Util.linkTo('/login');
@@ -83,7 +94,7 @@ export default function Comment($el, commentData, isCommit, callback) {
             }
 
             $(".comment-input")
-                .slideDown(500)
+                .slideDown(200)
                 .find(".input-box")
                 .attr('data-type','1')
                 .attr('data-user-id',$this.parents("li").data('userId'))
