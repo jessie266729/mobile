@@ -20,7 +20,7 @@
       color: #93908b;
       position: relative;
       padding: rem(10) 0;
-      @include myTransition();
+      @include myTransition(all 0.8s);
 
       img{
         height: rem(113);

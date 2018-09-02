@@ -37,7 +37,7 @@ export default function Groups() {
                 that.circleList = data;
                 // that.getUserPostMsgList(that.params, that.renderMsgList.bind(that), 'loadMore');
                 that.renderMescroll.call(that);
-                var swiper = new Swiper('.group-list',{
+                let swiper = new Swiper('.group-list',{
                     slidesPerView: 4
                 });
                 $(".group-list .swiper-slide").eq(0).addClass("active");
