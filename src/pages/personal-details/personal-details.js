@@ -94,6 +94,9 @@ export default function PersonalDetails(id) {
 				Util.linkTo('/apply-certf');
 			}
 		},
+        toEditUserInfo: function (e,$this) {
+            Util.linkTo('/edit-user-info');
+        },
         addGroups: function() {
             let token = Util.getCookie('AccessToken');
             let userInfo = this.userInfo;

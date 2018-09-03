@@ -202,6 +202,13 @@ const TrainingRecordCb = function(id) {
         TrainingRecord.default(id);
     },'TrainingRecord')
 };
+/*编辑用户信息主界面*/
+const EditUserInfoCb = function() {
+    require.ensure([], (require) => {
+        let Register = require('./pages/edit-user-info/edit-user-info.js');
+        Register.default();
+    },'EditUserInfo')
+};
 /*jquery ajax setup*/
 $.ajaxSetup({
     cache: false,
@@ -266,7 +273,8 @@ const routes = {
     '/inviting-to-play/:id':InvitingToPlayCb,
     '/inviting-create-order/:id':InvitingCreateOrderCb,
     '/order-details/:id':OrderDetailsCb,
-    '/training-record':TrainingRecordCb
+    '/training-record':TrainingRecordCb,
+    '/edit-user-info':EditUserInfoCb
 };
 
 const router = new Router(routes).configure({

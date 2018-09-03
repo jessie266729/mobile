@@ -2,6 +2,9 @@
 $white:#ffffff;
 $orange:#ffaf00;
 $border:#e0e0e0;
+$black:#000000;
+$deepGray:#252525;
+
 .border-b{
   border-bottom: rem(1) solid $border;
 }
@@ -330,6 +333,12 @@ $border:#e0e0e0;
 }
 .orange-bg{
   background: $orange;
+}
+.black-bg{
+  background: $black;
+}
+.deepGray-bg{
+  background: $deepGray;
 }
 //-------常见字体颜色 end---------
 //-------常见字号 begin-------
