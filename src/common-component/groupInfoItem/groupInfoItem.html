@@ -41,7 +41,12 @@
 
         {{each CommentReplyList item i}}
 
-            <p><span>{{item.NickName}}：</span>{{item.CommentReplyType === 1 ? '@' + item.ReplyUserNickName + ' ' + item.Content : item.Content}}</p>
+            <p><span>{{item.NickName}}：</span>
+                {{if item.CommentReplyType === 1}}
+                <span>@{{item.ReplyUserNickName + ' '}}</span>
+                {{/if}}
+                <span>{{#item.Content}}</span>
+            </p>
 
         {{/each}}
         <div class="showAll js-handle" data-handle="handleLink">

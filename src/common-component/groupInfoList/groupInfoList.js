@@ -1,4 +1,5 @@
 import Util from '../../common-component/util/util.js';
+import qqFaceConfig from '../util/qqFaceConfig.js';
 import PinchZoom from '../../common-component/pinchZoom/pinchZoom.js';
 import GroupInfoListTpl from "./groupInfoList.html";
 import API from '../../api/Api.js';
@@ -11,6 +12,9 @@ export default function GroupInfoList($el, infoList, firstLoad) {
             let token = Util.getCookie('AccessToken');
 
             this.hasLogin = !!token || false;
+            for(let k in infoList){
+                qqFaceConfig.qqFaceResolve(infoList[k].CommentReplyList);
+            }
 
             $el.append(GroupInfoListTpl({infoList}));
             firstLoad && this.bindEvent();

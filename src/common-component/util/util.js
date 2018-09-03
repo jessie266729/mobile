@@ -465,9 +465,8 @@ module.exports = {
             })
 
             !isMainRoter && $(".footer .nav-item.active").removeClass("active");
-
             key.length > 0 && isMainRoter && $(".footer .nav-item.active").removeClass("active");
-            key.length > 0 && isMainRoter && $(".footer .nav-item[data-router="+key.split('/')[1]+"]").addClass("active");
+            key.length > 0 && isMainRoter && $(".footer .nav-item[data-choose="+key.split('/')[1]+"]").addClass("active");
         }
     },
     restHeader: function(key) {

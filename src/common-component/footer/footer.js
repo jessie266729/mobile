@@ -13,9 +13,9 @@ export default function Footer($el, cb) {
             $(".footer .nav-item").on("click",function() {
                 let $this = $(this);
                 if($this.hasClass('active')){
-                    return;
+                    return false;
                 }else{
-                    let router = $this.data('router')
+                    let router = $this.data('router');
                     Util.linkTo(`/${router}`);
                 }
             });

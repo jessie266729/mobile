@@ -1,21 +1,19 @@
 import Util from '../util/util.js';
+import qqFaceConfig from '../util/qqFaceConfig.js';
 import CommentTpl from "./comment.html";
 
 import "./comment.scss";
 
 export default function Comment($el, commentData, isCommit, callback) {
     const handlers = {
+        getData:{
+            qqFaceList : qqFaceConfig.getFaceList()
+        },
         init: function() {
             let token = Util.getCookie('AccessToken');
-
             this.hasLogin = !!token || false;
-            let listFace = [];
-            for(let i = 0,len = 75;i<len;i++){
-                let qqGif = require('../../asset/images/arclist/'+(i+1)+'.gif');
-                //let qqGif = '../../asset/images/arclist/'+(i+1)+'.gif';
-                listFace.push(qqGif);
-            }
-            commentData.listFace = listFace;
+            qqFaceConfig.qqFaceResolve(commentData.commentList);
+            commentData.listFace = this.getData.qqFaceList;
             $el.append(CommentTpl(commentData));
             this.bindEvent();
 
@@ -80,12 +78,50 @@ export default function Comment($el, commentData, isCommit, callback) {
                         Content: $this.val()
                     });
                     $this.blur();
+                    $this.val('');
                 }
             })
         },
         qqFaceShow:function (e,$this) {
             $('.qq-face-panel').removeClass('hide');
 
+        },
+        chooseQQFace:function (e,$this) {
+            let index = $this.data('index');
+            let chooseQQFace = '['+this.getData.qqFaceList[index].title+']';
+            this.setCaret('#enter_comment');
+            this.insertAtCaret('#enter_comment',chooseQQFace);
+        },
+        setCaret: function(enterId){
+            if(!$.browser.msie) return;
+            let enterObj = $(enterId);
+            let initSetCaret = function(){
+                let textObj = enterObj.get(0);
+                textObj.caretPos = document.selection.createRange().duplicate();
+            };
+            enterObj.click(initSetCaret).select(initSetCaret).keyup(initSetCaret);
+        },
+
+        insertAtCaret: function(enterId,textFeildValue){
+            let enterObj = $(enterId);
+            let textObj = enterObj.get(0);
+            if(document.all && textObj.createTextRange && textObj.caretPos){
+                let caretPos=textObj.caretPos;
+                caretPos.text = caretPos.text.charAt(caretPos.text.length-1) === '' ?
+                    textFeildValue+'' : textFeildValue;
+            } else if(textObj.setSelectionRange){
+                let rangeStart=textObj.selectionStart;
+                let rangeEnd=textObj.selectionEnd;
+                let tempStr1=textObj.value.substring(0,rangeStart);
+                let tempStr2=textObj.value.substring(rangeEnd);
+                textObj.value=tempStr1+textFeildValue+tempStr2;
+                textObj.focus();
+                let len=textFeildValue.length;
+                textObj.setSelectionRange(rangeStart+len,rangeStart+len);
+                //textObj.blur();
+            }else{
+                textObj.value+=textFeildValue;
+            }
         },
         handleComment: function(e,$this) {
             if(!this.hasLogin){

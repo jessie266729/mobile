@@ -15,7 +15,12 @@
                 <div class="info-modal">
                     <p class="name">{{itemData.NickName}}</p>
                     <p class="time">{{itemData.InDate}}</p>
-                    <p class="content js-handle" data-handle="handleComment">{{itemData.CommentReplyType === 1 ? '@' + itemData.ReplyUserNickName + ' ' + itemData.Content : itemData.Content}}</p>
+                    <p class="content js-handle" data-handle="handleComment">
+                        {{if itemData.CommentReplyType === 1}}
+                        <span>@{{itemData.ReplyUserNickName + ' '}}</span>
+                        {{/if}}
+                        <span v-html="">{{#itemData.Content}}</span>
+                    </p>
                     <div class="operator">
                         <span class="icon-comment js-handle" data-handle="handleComment"></span>
                     </div>
@@ -25,14 +30,14 @@
     </ul>
     <div class="comment-input">
         <div class="comment-panel">
-            <input class="input-box" value="" type="text" />
+            <input class="input-box" id="enter_comment" value="" type="text" />
             <div class="send-btn">
                 <span class="icon-expression js-handle" data-handle="qqFaceShow"></span>
             </div>
         </div>
         <div class="qq-face-panel hide">
             {{each listFace as qqFace i}}
-            <img src="{{qqFace}}"/>
+            <img class="js-handle" src="{{qqFace.url}}" data-index="{{i}}" data-handle="chooseQQFace"/>
 
             {{/each}}
         </div>
