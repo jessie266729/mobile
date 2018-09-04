@@ -4,26 +4,29 @@
     </div>
     <p class="tc mt20 fz32">设置</p>
 
-    <div class="plr20 mt100 fz30">
-        <div class="js-handle poo p-pj border-b p10" data-handle="toEditMobilePhone" >
-            <span>修改手机号</span>
-            <span>{{MobilePhone}}<span class="orange-color ml20 fz36 fw-b">></span></span>
+    <div class="edit-user-info-container">
+
+        <div class="plr20 mt100 fz30">
+            <div class="js-handle poo p-pj border-b p10" data-handle="toEditMobilePhone" >
+                <span>修改手机号</span>
+                <span>{{MobilePhone}}<span class="orange-color ml20 fz36 fw-b">></span></span>
+            </div>
+
+            <div class="js-handle poo p-pj border-b p10" data-handle="toEditUrl" >
+                <span>头像</span>
+                {{if Url}}
+                <img class="radius-circle user-" src={{Url}} alt="">
+                {{else}}
+                <img class="radius-circle" src="../../asset/images/personal/headImg.png" alt="">
+                {{/if}}
+                <span class="orange-color ml20 fz36 fw-b">></span>
+            </div>
+
+            <div class="js-handle poo p-pj border-b p10" data-handle="toEditNickName" >
+                <span>昵称</span>
+                <span>{{NickName}}<span class="orange-color ml20 fz36 fw-b">></span></span>
+            </div>
         </div>
 
-        <div class="js-handle poo p-pj border-b" data-handle="toEditUrl" >
-            <span>头像</span>
-            {{if Url}}
-            <img class="radius-circle user-" src={{Url}} alt="">
-            {{else}}
-            <img class="radius-circle" src="../../asset/images/personal/headImg.png" alt="">
-            {{/if}}
-        </div>
-        <div class="js-handle poo p-pj border-b" data-handle="toEditNickName" >
-            <span>昵称 {{NickName}}</span>
-        </div>
-        <div class="js-handle poo p-pj border-b" data-handle="toEditNickName" >
-            <div class="header-top"></div>
-            <span>昵称 {{NickName}}</span>
-        </div>
     </div>
 </div>

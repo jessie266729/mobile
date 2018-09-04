@@ -3,6 +3,7 @@ const baseUrl = 'http://www.troycd.com:8999/api';
 module.exports = {
 	/*登陆、注册、修改密码*/
 	userLogin: `${baseUrl}/User/UserLogin`,
+    userLogout: `${baseUrl}/User/UserLogout`,
 	sendRegisterUserMsg: `${baseUrl}/User/SendRegisterUserMsg`,
 	registerUser: `${baseUrl}/User/RegisterUser`,
 	sendResetPwdMsg: `${baseUrl}/User/SendResetPwdMsg`,
@@ -48,6 +49,9 @@ module.exports = {
 	getPersonalActivityList:`${baseUrl}/User/QueryApplyCompetitionList`,
 	getPersonalClassesList:`${baseUrl}/User/QueryUserStudentLessonHourList`,
 	getUserInfo:`${baseUrl}/User/GetUserInfo`,
+    sendBindMobilePhoneMsg:`${baseUrl}/User/SendBindMobilePhoneMsg`,
+    bindMobilePhone:`${baseUrl}/User/BindMobilePhone`,
+    upUserInfo:`${baseUrl}/User/UpUserInfo`,
 
 	/* 订单列表 */
 	getAllRecordList:`${baseUrl}/GameOrder/SeachOrderList`,
