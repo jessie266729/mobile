@@ -2,30 +2,42 @@
     <div class="head-logo tc deepGray-bg ptb20">
         <img src="../../asset/images/login/logo_1.png" alt=""/>
     </div>
-    <p class="tc mt20 fz32">设置</p>
 
     <div class="edit-user-info-container">
 
+        <p class="tc mt20 fz32">设置</p>
         <div class="plr20 mt100 fz30">
             <div class="js-handle poo p-pj border-b p10" data-handle="toEditMobilePhone" >
                 <span>修改手机号</span>
                 <span>{{MobilePhone}}<span class="orange-color ml20 fz36 fw-b">></span></span>
             </div>
 
-            <div class="js-handle poo p-pj border-b p10" data-handle="toEditUrl" >
+            <div class="js-handle poo p-pj border-b p10 mt20" data-handle="toEditUrl" >
                 <span>头像</span>
+                <span>
                 {{if Url}}
-                <img class="radius-circle user-" src={{Url}} alt="">
+                <img class="radius-circle head-image" src={{Url}} alt="">
                 {{else}}
-                <img class="radius-circle" src="../../asset/images/personal/headImg.png" alt="">
+                <img class="radius-circle head-image" src="../../asset/images/personal/headImg.png" alt="">
                 {{/if}}
                 <span class="orange-color ml20 fz36 fw-b">></span>
+                </span>
             </div>
 
-            <div class="js-handle poo p-pj border-b p10" data-handle="toEditNickName" >
+            <div class="js-handle poo p-pj border-b p10 mt20" data-handle="toEditNickName" >
                 <span>昵称</span>
                 <span>{{NickName}}<span class="orange-color ml20 fz36 fw-b">></span></span>
             </div>
+
+            <div class="js-handle poo p-pj border-b p10 mt20" data-handle="" >
+                <span>修改密码</span>
+                <span class="orange-color ml20 fz36 fw-b">></span>
+            </div>
+
+
+
+            <div class="js-handle white-color orange-bg radius-lr mlr40 mt100 tc ptb10 fz32" data-handle="logoutSystem">退出登录</div>
+
         </div>
 
     </div>

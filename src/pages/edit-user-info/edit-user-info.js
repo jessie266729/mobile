@@ -16,7 +16,7 @@ export default function EditUserInfo() {
                 Util.linkTo('/login');
                 return;
             }
-            $("#app-container").html( EditUserInfoTpl( loginUserInfo ) );
+            $(".container").html( EditUserInfoTpl( loginUserInfo ) );
             this.bindEvent();
             Util.setTitle("设置");
         },
@@ -36,6 +36,9 @@ export default function EditUserInfo() {
         },
         toEditNickName: function (e,$this) {
             NickName($(".edit-user-info-container"));
+        },
+        logoutSystem: function() {
+            Util.logout();
         }
     };
 

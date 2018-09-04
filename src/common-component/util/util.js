@@ -1,5 +1,6 @@
 import _ from 'underscore';
 import spinnerImg from '../../asset/images/Spinner.gif';
+import API from '../../api/Api.js';
 
 Date.prototype.format = function(formatStr){
     var str = formatStr;
@@ -632,5 +633,24 @@ module.exports = {
 
         this.swipeRight = function (dom) {
         }
+    },
+    logout:function () {
+        let _this = this;
+        $.ajax({
+            url: API.userLogout,
+            data: {
+                AccessToken:_this.getCookie('AccessToken'),
+            },
+            success: function(req){
+                if(!req.IsError){
+                    _this.deleteCookie('AccessToken',document.domain);
+                    window.localStorage.removeItem('UserInfo');
+                    _this.linkTo('/login');
+                }
+            },
+            error: function(msg){
+                _this.alertMessage(msg);
+            }
+        })
     }
 }

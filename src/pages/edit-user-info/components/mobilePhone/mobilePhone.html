@@ -1,8 +1,19 @@
-<div class="edit-mobile-phone">
-    <span>修改手机号</span>
-    <input id="mobilePhone" title="输入注册手机号码" type="number" maxlength="11" minlength="11" />
-    <input id="code" title="输入验证码" type="number">
-    <a class="js-handle" data-handle="sendSMS">获取验证码</a>
-    <a class="js-handle" data-handle="submitEditMobilePhone">确认</a>
-    <a class="js-handle" data-handle="toEditUserInfo">返回</a>
+<div class="edit-mobile-phone mlr40">
+    <p class="tc mt20 fz32">修改手机号</p>
+
+    <div class="mlr40 mt100 ">
+
+        <div>
+            <input class="box-border radius-lr border-a p20 fz28 tc db w-full border-ccc main-bg" id="mobilePhone" placeholder="输入注册手机号码" type="number" maxlength="11" minlength="11" />
+        </div>
+
+        <div class="mt40 radius-lr border-a over-h fz28 tc db w-full border-ccc orange-bg poo p-ac">
+            <input class="p-f2 main-bg p20 border-n tc" id="code" placeholder="输入验证码" type="number">
+            <a class="js-handle p-f1 white-color" data-handle="sendSMS">获取验证码</a>
+        </div>
+
+        <div class="js-handle white-color orange-bg radius-lr mt100 tc ptb20 fz32" data-handle="submitEditMobilePhone">确认</div>
+
+
+    </div>
 </div>

@@ -38,6 +38,15 @@ $deepGray:#252525;
 .hide{
   display: none;
 }
+.db{
+  display: block;
+}
+.dib{
+  display: inline-block;
+}
+.box-border{
+  box-sizing: border-box;
+}
 .w-full{width: 100%;}
 //-------浮动 begin-------
 .fl {
@@ -339,6 +348,9 @@ $deepGray:#252525;
 }
 .deepGray-bg{
   background: $deepGray;
+}
+.main-bg{
+  background: #f1ede8;
 }
 //-------常见字体颜色 end---------
 //-------常见字号 begin-------

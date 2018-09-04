@@ -5,11 +5,14 @@
 import MobilePhoneTpl from './mobilePhone.html';
 import API from '../../../../api/Api.js';
 import Util from '../../../../common-component/util/util.js';
+import "./mobilePhone.scss";
 
 export default function Interaction($el) {
 
     const handlers = {
-
+        pageData:{
+            codeSending:false
+        },
         init: function() {
             $el.html( MobilePhoneTpl() );
             this.bindEvent();
@@ -22,13 +25,27 @@ export default function Interaction($el) {
                 _this[handle] && _this[handle](e,$(this));
             });
         },
-        sendSMS: function () {
+        sendSMS: function (e,$this) {
+            let _this = this;
+            if(this.pageData.codeSending){
+                return false;
+            }
+            this.pageData.codeSending = true;
             let mobilePhone = $('#mobilePhone').val();
             if(!mobilePhone ){
                 Util.alertMessage('请输入正确格式的手机号！');
                 return;
             }
-
+            let count = 30;
+            let timer = setInterval(function () {
+                count --;
+                $this.text(count);
+                if(count<=0){
+                    $this.text('获取验证码');
+                    window.clearInterval(timer);
+                    _this.pageData.codeSending = false;
+                }
+            },1000);
             $.ajax({
                 url: API.sendBindMobilePhoneMsg,
                 data: {
@@ -37,11 +54,17 @@ export default function Interaction($el) {
                 },
                 success: function(req){
                     if(!req.IsError){
+                    }else {
+                        $this.text('获取验证码');
+                        window.clearInterval(timer);
+                        _this.pageData.codeSending = false;
                     }
 
                 },
                 error: function(msg){
-                    console.log(msg);
+                    $this.text('获取验证码');
+                    window.clearInterval(timer);
+                    _this.pageData.codeSending = false;
                 }
             })
         },
@@ -64,19 +87,23 @@ export default function Interaction($el) {
                 success: function(req){
                     if(!req.IsError){
                         Util.alertMessage(req.Message);
-                        $.ajax({
-                            url: API.userLogout,
-                            data: {
-                                AccessToken:Util.getCookie('AccessToken'),
-                            },
-                            success: function(req){
-                                if(!req.IsError){
-                                }
-                            },
-                            error: function(msg){
-                                console.log(msg);
-                            }
-                        })
+                        Util.logout();
+                        // $.ajax({
+                        //     url: API.userLogout,
+                        //     data: {
+                        //         AccessToken:Util.getCookie('AccessToken'),
+                        //     },
+                        //     success: function(req){
+                        //         if(!req.IsError){
+                        //             Util.deleteCookie('AccessToken',document.domain);
+                        //             window.localStorage.removeItem('UserInfo');
+                        //             Util.linkTo('/login');
+                        //         }
+                        //     },
+                        //     error: function(msg){
+                        //         console.log(msg);
+                        //     }
+                        // })
                     }
                 },
                 error: function(msg){
