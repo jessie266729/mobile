@@ -22,7 +22,7 @@ module.exports = {
                 let face = '['+qqFaces[f].title+']';
                 if(lt[k].Content && lt[k].Content.indexOf(face)!==-1){
                     let fList = lt[k].Content.split(face);
-                    lt[k].Content = fList.join('<img src="'+qqFaces[f].url+'"/>');
+                    lt[k].Content = fList.join('<img style="width: 0.6rem;" src="'+qqFaces[f].url+'"/>');
                 }
             }
         }
