@@ -55,8 +55,10 @@ export default function Groups() {
             let count = $(".school-switch-touch").length;
             //向左滑动触发事件
             touch.swipeLeft = function (dom) {
-
+                let arrowNode = $('.swiper-slide.active .arrow');
+                arrowNode.animate({'left':'150%'},400);
                 timer = setTimeout(function () {
+                    arrowNode.css('left','50%');
                     window.clearTimeout(timer);
                     let index = _this.getData.index===(count-1)?0:(_this.getData.index+1);
                     $(".school-switch-touch:eq("+index+")").click();
@@ -66,7 +68,10 @@ export default function Groups() {
 
             //向右滑动事件
             touch.swipeRight = function (dom) {
+                let arrowNode = $('.swiper-slide.active .arrow');
+                arrowNode.animate({'left':'-50%'},400);
                 timer = setTimeout(function () {
+                    arrowNode.css({'left':'50%'});
                     let index = _this.getData.index===0?(count-1):(_this.getData.index-1);
                     $(".school-switch-touch:eq("+index+")").click();
                 },500);

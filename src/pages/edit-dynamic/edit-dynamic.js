@@ -43,11 +43,25 @@ export default function EditDynamic(id,name) {
 							Util.alertMessage("上传成功！");
 							let resList = req.Data;
 							resList.forEach(element => {
-								_this.imgUrls.push(element.RelativeUrl);
+                                element.index = 'index'+_this.imgUrls.length;
+								_this.imgUrls.push(element);
 							});
+							let count = 0;
 							resArr.forEach(item => {
-								$(".image-picker").children().eq(0).before("<div><img src='"+item+"'></div>");
+								$(".image-picker").children().eq(0).before('<div class="upload-img"><span class="delete-img" data-index="'+resList[count].index+'">x</span><img src="'+item+'"></div>');
+								count++;
 							});
+							$('.delete-img').off('click').on('click',function (e) {
+								let imgThis = $(this);
+								let imgIndex = imgThis.data('index');
+								imgThis.parents('.upload-img').remove();
+                                for(let i=0,len = _this.imgUrls.length;i<len;i++){
+                                	if(_this.imgUrls[i].index === imgIndex){
+                                        _this.imgUrls.splice(i, 1);
+                                        break;
+									}
+								}
+                            });
 						}
 					},
 					error:function(){
@@ -64,14 +78,17 @@ export default function EditDynamic(id,name) {
 				Util.alertMessage('请输入您此刻的想法！');
 				return;
 			}
-
+			let submitImg = [];
+			for(let k in this.imgUrls){
+				submitImg.push(this.imgUrls[k].RelativeUrl);
+			}
 			$.ajax({
 				url: API.addPostMessage,
 				data: {
 					Body: {
 						CircleId: id,
 						Content: con,
-						ImageUrlList: this.imgUrls
+						ImageUrlList: submitImg
 					}
 				},
 				success: function(req) {

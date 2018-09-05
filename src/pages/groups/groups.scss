@@ -34,7 +34,7 @@
       &.active{
         color: #ffaf00;
 
-        &:after{
+        .arrow{
           content:'';
           display: inline-block;
           vertical-align: middle;
