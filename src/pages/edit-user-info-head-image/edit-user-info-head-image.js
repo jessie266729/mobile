@@ -44,7 +44,6 @@ export default function Live($el) {
                     success:function(req){
                         Util.loading(false);
                         if(!req.IsError){
-                            Util.alertMessage("上传成功！");
                             $("#headImageUrl").val(req.Data[0].RelativeUrl);
                             _this.absoluteUrl = req.Data[0].AbsoluteUrl;
                             $(".head-image-url").attr("src", req.Data[0].AbsoluteUrl);
@@ -60,12 +59,17 @@ export default function Live($el) {
 		},
         submitEditHeadImage :function () {
             let _this = this;
+            let headImageUrl = $("#headImageUrl").val();
+            if(!headImageUrl){
+                Util.alertMessage('请上传图片！');
+                return;
+            }
             $.ajax({
                 url: API.upUserInfo,
                 data: {
                     AccessToken:Util.getCookie('AccessToken'),
                     Body:{
-                        HeadImageUrl:$("#headImageUrl").val()
+                        HeadImageUrl:headImageUrl
                     }
                 },
                 success: function(req){
