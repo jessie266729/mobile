@@ -47,6 +47,7 @@ export default function Live($el) {
                             Util.alertMessage("上传成功！");
                             $("#headImageUrl").val(req.Data[0].RelativeUrl);
                             _this.absoluteUrl = req.Data[0].AbsoluteUrl;
+                            $(".head-image-url").attr("src", req.Data[0].AbsoluteUrl);
                         }
                     },
                     error:function(){
