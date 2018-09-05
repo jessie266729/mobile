@@ -5,7 +5,7 @@
 import PasswordTpl from './edit-user-info-password.html';
 import API from '../../api/Api.js';
 import Util from '../../common-component/util/util.js';
-
+import "./edit-user-info-password.scss";
 export default function Live($el) {
 
     const handlers = {

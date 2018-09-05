@@ -5,6 +5,7 @@
 import HeadImageTpl from './edit-user-info-head-image.html';
 import API from '../../api/Api.js';
 import Util from '../../common-component/util/util.js';
+import "./edit-user-info-head-image.scss";
 
 export default function Live($el) {
     const accessToken = Util.getCookie('AccessToken');

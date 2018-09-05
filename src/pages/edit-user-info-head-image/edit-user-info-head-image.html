@@ -6,16 +6,16 @@
 
     <p class="tc mt20 fz32">修改头像</p>
 
-    <div class="mlr40 mt100 ">
+    <div class="mlr40 mt40 plr40 tc">
 
         {{if Url}}
-        <img class="radius-circle" src={{Url}} alt="">
+        <img class="radius-circle person-icon" src={{Url}} alt="">
         {{else}}
-        <img class="radius-circle" src="../../asset/images/personal/headImg.png" alt="">
+        <img class="radius-circle person-icon" src="../../asset/images/personal/headImg.png" alt="">
         {{/if}}
 
         <div class="image-picker img-box clearFix">
-            <div class="choose-image fl">
+            <div class="choose-image">
                 <form id="file" action="" enctype="multipart/form-data">
                     <input type="file" name="uploadFile" multiple="multiple" />
                 </form>
