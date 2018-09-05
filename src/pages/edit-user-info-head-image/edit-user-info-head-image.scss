@@ -1,0 +1,105 @@
+@import "../../asset/common";
+
+.edit-head-image{
+  padding: rem(38) rem(30);
+  .dynamic-content{
+    background: transparent;
+    width: 100%;
+    font-size: rem(30);
+    color: #050100;
+    line-height: rem(40);
+    border: none;
+    padding: 0 rem(12);
+    margin: rem(12) 0;
+    box-sizing: border-box;
+  }
+  .image-picker{
+    .choose-image{
+      float:left;
+      width: rem(218);
+      height: rem(218);
+      border: 2px solid #cec9c3;
+      border-radius: rem(17);
+      position: relative;
+      form,input{
+        width: 100%;
+        height: 100%;
+        opacity: 0;
+        position: relative;
+        z-index: 11;
+      }
+      >div{
+        width: rem(108);
+        height: rem(108);
+        background: url('../../asset/images/groups/chooseImg.png') no-repeat center;
+        background-size: rem(108) rem(108);
+        margin: auto;
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+      }
+    }
+    & > div{
+      float:left;
+      width: rem(218);
+      height: rem(218);
+      margin:0 rem(14) rem(15) 0;
+      border-radius: rem(17);
+      &:nth-child(3n + 3){
+        margin-right:0;
+      }
+      & > img{
+        display: block;
+        width:100%;
+        height:100%;
+        border-radius: rem(17);
+      }
+    }
+  }
+  .operator{
+    font-size: rem(24);
+    padding: rem(15) 0;
+    border-top: 1px solid #d9d8d4;
+    border-bottom: 1px solid #d9d8d4;
+    margin-top: rem(30);
+    .limit{
+      color: #625b51;
+      >img{
+        width: rem(35);
+        height: rem(24);
+        margin-right: rem(5);
+        vertical-align: middle;
+      }
+      >span{
+        vertical-align: middle;
+      }
+      >div{
+        float: right;
+      }
+    }
+    .buttons{
+      margin-top: rem(20);
+      >div{
+        width: rem(120);
+        height: rem(50);
+        line-height: rem(50);
+        border-radius: rem(12);
+        text-align: center;
+      }
+      // >div:nth-child(1){
+      //     color: #93908b;
+      //     background: #cec9c3;
+      //     float: left;
+      //     margin-left: rem(-10);
+      // }
+      >div:nth-child(1){
+        color: #fff;
+        background: #ffaf00;
+        float: right;
+        margin-right: rem(-10);
+      }
+    }
+  }
+}

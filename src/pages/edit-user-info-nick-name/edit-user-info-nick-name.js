@@ -2,16 +2,23 @@
  *修改昵称页
  */
 
-import NickNameTpl from './nickName.html';
-import API from '../../../../api/Api.js';
-import Util from '../../../../common-component/util/util.js';
+import NickNameTpl from './edit-user-info-nick-name.html';
+import API from '../../api/Api.js';
+import Util from '../../common-component/util/util.js';
 
 export default function Videos($el) {
 
     const handlers = {
         init: function() {
-            $el.html( NickNameTpl() );
+
+            const loginUserInfo = JSON.parse(localStorage.getItem('UserInfo'));
+            if(!loginUserInfo) {
+                Util.linkTo('/login');
+                return;
+            }
+            $(".container").html( NickNameTpl( loginUserInfo ) );
             this.bindEvent();
+            Util.setTitle("修改昵称");
         },
         bindEvent: function() {
             let _this = this;

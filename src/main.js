@@ -209,6 +209,34 @@ const EditUserInfoCb = function() {
         Register.default();
     },'EditUserInfo')
 };
+/*编辑用户信息-修改手机号*/
+const EditUserInfoMobilePhoneCb = function() {
+    require.ensure([], (require) => {
+        let Register = require('./pages/edit-user-info-mobile-phone/edit-user-info-mobile-phone.js');
+        Register.default();
+    },'EditUserInfoMobilePhone')
+};
+/*编辑用户信息-修改昵称*/
+const EditUserInfoNickNameCb = function() {
+    require.ensure([], (require) => {
+        let Register = require('./pages/edit-user-info-nick-name/edit-user-info-nick-name.js');
+        Register.default();
+    },'EditUserInfoNickName')
+};
+/*编辑用户信息-修改头像*/
+const EditUserInfoHeadImageCb = function() {
+    require.ensure([], (require) => {
+        let Register = require('./pages/edit-user-info-head-image/edit-user-info-head-image.js');
+        Register.default();
+    },'EditUserInfoHeadImage')
+};
+/*编辑用户信息-修改密码*/
+const EditUserInfoPasswordCb = function() {
+    require.ensure([], (require) => {
+        let Register = require('./pages/edit-user-info-password/edit-user-info-password.js');
+        Register.default();
+    },'EditUserInfoPassword')
+};
 /*jquery ajax setup*/
 $.ajaxSetup({
     cache: false,
@@ -274,7 +302,11 @@ const routes = {
     '/inviting-create-order/:id':InvitingCreateOrderCb,
     '/order-details/:id':OrderDetailsCb,
     '/training-record':TrainingRecordCb,
-    '/edit-user-info':EditUserInfoCb
+    '/edit-user-info':EditUserInfoCb,
+    '/edit-user-info-head-image':EditUserInfoHeadImageCb,
+    '/edit-user-info-mobile-phone':EditUserInfoMobilePhoneCb,
+    '/edit-user-info-nick-name':EditUserInfoNickNameCb,
+    '/edit-user-info-password':EditUserInfoPasswordCb
 };
 
 const router = new Router(routes).configure({

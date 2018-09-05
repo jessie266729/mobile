@@ -3,9 +3,9 @@
 import EditUserInfoTpl from './edit-user-info.html';
 import "./edit-user-info.scss";
 
-import HeadImage from './components/headImage/headImage.js'
-import MobilePhone from './components/mobilePhone/mobilePhone.js'
-import NickName from './components/nickName/nickName'
+import HeadImageTpl from '../edit-user-info-head-image/edit-user-info-head-image.html'
+import MobilePhoneTpl from '../edit-user-info-mobile-phone/edit-user-info-mobile-phone.html'
+import NickNameTpl from '../edit-user-info-nick-name/edit-user-info-nick-name.html'
 import Util from '../../common-component/util/util.js';
 
 export default function EditUserInfo() {
@@ -29,13 +29,16 @@ export default function EditUserInfo() {
             });
         },
         toEditMobilePhone: function (e,$this) {
-            MobilePhone($(".edit-user-info-container"));
+            Util.linkTo('/edit-user-info-mobile-phone');
         },
         toEditUrl: function (e,$this) {
-            HeadImage($(".edit-user-info-container"));
+            Util.linkTo('/edit-user-info-head-image');
         },
         toEditNickName: function (e,$this) {
-            NickName($(".edit-user-info-container"));
+            Util.linkTo('/edit-user-info-nick-name');
+        },
+        toEditPassword: function (e,$this) {
+            Util.linkTo('/edit-user-info-password');
         },
         logoutSystem: function() {
             Util.logout();

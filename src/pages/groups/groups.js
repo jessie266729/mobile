@@ -127,7 +127,6 @@ export default function Groups() {
                 type: 'post',
                 data: {Body:null},
                 success: function(req){
-
                     if(!req.IsError){
                         cb && cb(req.Data || []);
                     }
@@ -145,7 +144,6 @@ export default function Groups() {
                 type: 'post',
                 data: {Body:params},
                 success: function(req){
-
                     if(!req.IsError){
                         cb && cb(req || {});
                     }

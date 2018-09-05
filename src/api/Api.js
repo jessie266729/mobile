@@ -52,6 +52,7 @@ module.exports = {
     sendBindMobilePhoneMsg:`${baseUrl}/User/SendBindMobilePhoneMsg`,
     bindMobilePhone:`${baseUrl}/User/BindMobilePhone`,
     upUserInfo:`${baseUrl}/User/UpUserInfo`,
+    changeUserPwd:`${baseUrl}/User/ChangeUserPwd`,
 
 	/* 订单列表 */
 	getAllRecordList:`${baseUrl}/GameOrder/SeachOrderList`,

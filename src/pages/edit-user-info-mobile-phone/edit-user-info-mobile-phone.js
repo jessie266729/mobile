@@ -2,10 +2,10 @@
  * 修改手机号页
  */
 
-import MobilePhoneTpl from './mobilePhone.html';
-import API from '../../../../api/Api.js';
-import Util from '../../../../common-component/util/util.js';
-import "./mobilePhone.scss";
+import MobilePhoneTpl from './edit-user-info-mobile-phone.html';
+import API from '../../api/Api.js';
+import Util from '../../common-component/util/util.js';
+import "./edit-user-info-mobile-phone.scss";
 
 export default function Interaction($el) {
 
@@ -14,8 +14,15 @@ export default function Interaction($el) {
             codeSending:false
         },
         init: function() {
-            $el.html( MobilePhoneTpl() );
+            const loginUserInfo = JSON.parse(localStorage.getItem('UserInfo'));
+            if(!loginUserInfo) {
+                Util.linkTo('/login');
+                return;
+            }
+            $(".container").html( MobilePhoneTpl( loginUserInfo ) );
             this.bindEvent();
+            Util.setTitle("修改绑定手机号");
+
         },
         bindEvent: function() {
             let _this = this;
@@ -32,8 +39,9 @@ export default function Interaction($el) {
             }
             this.pageData.codeSending = true;
             let mobilePhone = $('#mobilePhone').val();
-            if(!mobilePhone ){
+            if(!mobilePhone || !/^1[0-9]{10}$/.test(mobilePhone) ){
                 Util.alertMessage('请输入正确格式的手机号！');
+                _this.pageData.codeSending = false;
                 return;
             }
             let count = 30;
@@ -88,22 +96,6 @@ export default function Interaction($el) {
                     if(!req.IsError){
                         Util.alertMessage(req.Message);
                         Util.logout();
-                        // $.ajax({
-                        //     url: API.userLogout,
-                        //     data: {
-                        //         AccessToken:Util.getCookie('AccessToken'),
-                        //     },
-                        //     success: function(req){
-                        //         if(!req.IsError){
-                        //             Util.deleteCookie('AccessToken',document.domain);
-                        //             window.localStorage.removeItem('UserInfo');
-                        //             Util.linkTo('/login');
-                        //         }
-                        //     },
-                        //     error: function(msg){
-                        //         console.log(msg);
-                        //     }
-                        // })
                     }
                 },
                 error: function(msg){

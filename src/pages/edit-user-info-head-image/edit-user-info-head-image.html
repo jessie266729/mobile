@@ -1,0 +1,32 @@
+<div class="edit-head-image">
+
+    <div class="head-logo tc deepGray-bg ptb20">
+        <img src="../../asset/images/login/logo_1.png" alt=""/>
+    </div>
+
+    <p class="tc mt20 fz32">修改头像</p>
+
+    <div class="mlr40 mt100 ">
+
+        {{if Url}}
+        <img class="radius-circle" src={{Url}} alt="">
+        {{else}}
+        <img class="radius-circle" src="../../asset/images/personal/headImg.png" alt="">
+        {{/if}}
+
+        <div class="image-picker img-box clearFix">
+            <div class="choose-image fl">
+                <form id="file" action="" enctype="multipart/form-data">
+                    <input type="file" name="uploadFile" multiple="multiple" />
+                </form>
+                <div></div>
+            </div>
+        </div>
+
+
+        <input id="headImageUrl" type="hidden" value="{{Url}}">
+        <div class="js-handle white-color orange-bg radius-lr mt100 tc ptb20 fz32" data-handle="submitEditHeadImage">确认</div>
+
+
+    </div>
+</div>
