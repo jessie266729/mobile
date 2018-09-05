@@ -30,9 +30,13 @@ export default function Comment($el, commentData, isCommit, callback) {
             $('.dynamicDetails-layout').off('click').on('click',function (e) {
                if($(e.target).parents('.comment-input').length<=0 && $(e.target).data('handle')!=='handleComment'){
                    $(".comment-input").slideUp(200);
-                   $(".dynamicDetails-layout").removeClass("hasCommentInput");
+                   $(".dynamicDetails-layout").removeClass("hasCommentInput").removeClass("hasQQFacePanel");
                    $('.qq-face-panel').addClass('hide');
                }
+            });
+            $(".input-box").off('click').on('click',function () {
+                $('.qq-face-panel').addClass('hide');
+                $(".dynamicDetails-layout").addClass("hasCommentInput").removeClass("hasQQFacePanel");
             });
         },
         bindEvent: function() {
@@ -55,13 +59,12 @@ export default function Comment($el, commentData, isCommit, callback) {
                 $container.on('touchmove',function(event){
                     event.preventDefault();
                 });
-                
                 //_this.timeout = setTimeout(function() {
                     // e.target.scrollIntoView(false);
                 //},200);
             })
             .on('blur',function(e){
-                // $container.off('touchmove').scrollTop(currentScrollTop);
+                 $container.off('touchmove').scrollTop(currentScrollTop);
                 // $(".dynamicDetails-layout").removeClass("hasCommentInput");
                 // $(this)
                 // .val('')
@@ -84,7 +87,7 @@ export default function Comment($el, commentData, isCommit, callback) {
         },
         qqFaceShow:function (e,$this) {
             $('.qq-face-panel').removeClass('hide');
-
+            $(".dynamicDetails-layout").addClass("hasQQFacePanel");
         },
         chooseQQFace:function (e,$this) {
             let index = $this.data('index');
@@ -118,7 +121,7 @@ export default function Comment($el, commentData, isCommit, callback) {
                 textObj.focus();
                 let len=textFeildValue.length;
                 textObj.setSelectionRange(rangeStart+len,rangeStart+len);
-                //textObj.blur();
+                textObj.blur();
             }else{
                 textObj.value+=textFeildValue;
             }
@@ -137,7 +140,7 @@ export default function Comment($el, commentData, isCommit, callback) {
                 .focus();
             $(".dynamicDetails-layout").addClass("hasCommentInput");
         }
-    }
+    };
 
     handlers.init();
 }

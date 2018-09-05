@@ -2,10 +2,6 @@
 
 import EditUserInfoTpl from './edit-user-info.html';
 import "./edit-user-info.scss";
-
-import HeadImageTpl from '../edit-user-info-head-image/edit-user-info-head-image.html'
-import MobilePhoneTpl from '../edit-user-info-mobile-phone/edit-user-info-mobile-phone.html'
-import NickNameTpl from '../edit-user-info-nick-name/edit-user-info-nick-name.html'
 import Util from '../../common-component/util/util.js';
 
 export default function EditUserInfo() {

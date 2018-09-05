@@ -116,6 +116,7 @@
         bottom:0;
         left:0;
         width:100%;
+        min-height: rem(70);
         padding:rem(8) rem(24) rem(8) rem(24);
         @include box-shadow-outset(2px,2px,4px,4px,#d9d8d4);
         background: #ffffff;
@@ -147,8 +148,6 @@
             padding-right: rem(100);
         }
         .qq-face-panel{
-            height: rem(200);
-            overflow-y: auto;
             img{
                 width: rem(48);
                 height: rem(48);

@@ -29,18 +29,19 @@
         {{/each}}                
     </ul>
     <div class="comment-input">
-        <div class="comment-panel">
-            <input class="input-box" id="enter_comment" value="" type="text" />
-            <div class="send-btn">
-                <span class="icon-expression js-handle" data-handle="qqFaceShow"></span>
-            </div>
-        </div>
         <div class="qq-face-panel hide">
             {{each listFace as qqFace i}}
             <img class="js-handle" src="{{qqFace.url}}" data-index="{{i}}" data-handle="chooseQQFace"/>
 
             {{/each}}
         </div>
+        <div class="comment-panel">
+            <input class="input-box" id="enter_comment" value="" type="text" />
+            <div class="send-btn">
+                <span class="icon-expression js-handle" data-handle="qqFaceShow"></span>
+            </div>
+        </div>
+
 
     </div>
 </div>
