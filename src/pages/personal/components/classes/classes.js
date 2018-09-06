@@ -2,8 +2,6 @@
  * 课程直播页
  */
 
-import _ from 'underscore';
-import Util from '../../../../common-component/util/util.js';
 import API from '../../../../api/Api.js';
 import PersonalClassesTpl from './classes.html';
 import ClassesListTpl from './classes-list.html';

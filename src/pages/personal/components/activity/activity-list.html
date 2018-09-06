@@ -1,0 +1,16 @@
+{{each allData item}}
+<div class="active-item flex-common">
+    <div>{{item.CompetitionName}}</div>
+    <div>{{item.Project}}</div>
+    <div>{{item.InDate.split(' ')[0]}}</div>
+    {{if item.GameResult==='1'}}
+    <div><img src="../../../../asset/images/personal/champion.png" alt=""></div>
+    {{else if item.GameResult==='2'}}
+    <div><img src="../../../../asset/images/personal/champion.png" alt=""></div>
+    {{else if item.GameResult==='3'}}
+    <div><img src="../../../../asset/images/personal/second.png" alt=""></div>
+    {{else}}
+    <div>第 {{item.GameResult}} 名</div>
+    {{/if}}
+</div>
+{{/each}}
